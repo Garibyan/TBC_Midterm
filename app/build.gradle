@@ -58,6 +58,9 @@ dependencies {
     //Paging
     implementation "androidx.paging:paging-runtime:$paging_version"
 
+    //Splash screen
+    implementation 'androidx.core:core-splashscreen:1.0.0'
+
     //Data Store
     implementation "androidx.datastore:datastore-preferences:1.0.0"
 
