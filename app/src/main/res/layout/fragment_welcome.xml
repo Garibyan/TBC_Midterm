@@ -1,26 +1,54 @@
-<?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<?xml version="1.0" encoding="UTF-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.auth.WelcomeFragment">
+    android:orientation="vertical">
 
-    <TextView
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="WelcomeFragment" />
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="40dp"
+            android:letterSpacing="0.03"
+            android:text="WELCOME"
+            android:textColor="#E91E63"
+            android:textSize="30sp"
+            android:textStyle="italic" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="427dp"
+        android:layout_marginLeft="5dp"
+        android:background="@drawable/maincocktail" />
 
     <Button
-        android:id="@+id/login"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/logInBtn1"
+        android:layout_width="320dp"
+        android:layout_height="55dp"
         android:layout_gravity="center"
-        android:text="login"/>
-    <Button
-        android:id="@+id/register"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|center"
-        android:text="register"/>
+        android:layout_marginTop="30dp"
+        android:background="@drawable/button"
+        android:text="Login"
+        android:textColor="#fff" />
 
-</FrameLayout>
+    <Button
+        android:id="@+id/registerBtn1"
+        android:layout_width="320dp"
+        android:layout_height="55dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:text="SignUp"
+        android:textColor="#68329b" />
+
+</LinearLayout>
