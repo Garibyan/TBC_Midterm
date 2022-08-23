@@ -18,7 +18,7 @@ class RegistrationFragment : BaseFragment<FragmentRegistrationBinding>(
         super.onViewCreated(view, savedInstanceState)
 
         binding.apply {
-            register.setOnClickListener {
+            registerBtn2.setOnClickListener {
                 findNavController().navigate(RegistrationFragmentDirections.actionRegistrationFragmentToLoginFragment())
             }
         }

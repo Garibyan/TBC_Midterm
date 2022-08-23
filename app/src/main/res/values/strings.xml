@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">TBC_Midterm</string>
+    <string name="login">Login</string>
+    <string name="signup">SignUp</string>
 </resources>

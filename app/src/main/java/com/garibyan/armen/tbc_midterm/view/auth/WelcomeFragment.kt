@@ -23,10 +23,10 @@ class WelcomeFragment : BaseFragment<FragmentWelcomeBinding>(
         super.onViewCreated(view, savedInstanceState)
 
         binding.apply {
-            login.setOnClickListener {
+            logInBtn1.setOnClickListener {
                 findNavController().navigate(WelcomeFragmentDirections.actionWelcomeFragmentToLoginFragment())
             }
-            register.setOnClickListener {
+            registerBtn1.setOnClickListener {
                 findNavController().navigate(WelcomeFragmentDirections.actionWelcomeFragmentToRegistrationFragment())
             }
         }

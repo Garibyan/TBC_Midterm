@@ -18,7 +18,7 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(
         super.onViewCreated(view, savedInstanceState)
 
         binding.apply {
-            login.setOnClickListener {
+            logInBtn2.setOnClickListener {
                 findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToTabsFragment())
             }
         }
