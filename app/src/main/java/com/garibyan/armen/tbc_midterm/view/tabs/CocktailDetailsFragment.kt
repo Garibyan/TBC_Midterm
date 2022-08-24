@@ -1,13 +1,11 @@
 package com.garibyan.armen.tbc_midterm.view.tabs
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import androidx.fragment.app.viewModels
-import com.garibyan.armen.tbc_midterm.R
+import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
+import coil.load
 import com.garibyan.armen.tbc_midterm.databinding.FragmentCocktailDetailsBinding
 import com.garibyan.armen.tbc_midterm.view.BaseFragment
 import com.garibyan.armen.tbc_midterm.viewmodel.tabs.CocktailDetailsViewModel
@@ -17,9 +15,28 @@ class CocktailDetailsFragment : BaseFragment<FragmentCocktailDetailsBinding>(
 ) {
 
     private val viewModel: CocktailDetailsViewModel by viewModels()
+    private val args by navArgs<CocktailDetailsFragmentArgs>()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        initView()
+        onClickListeners()
+    }
+
+    private fun initView() = with(binding) {
+        imgCocktailImg.load(args.cocktail.strDrinkThumb)
+        txtTitle.text = args.cocktail.name
+        txtCategoryName.text = args.cocktail.strCategory
+        txtGlassName.text = args.cocktail.strGlass
+        txtAlcoholName.text = args.cocktail.strAlcoholic
+        txtInstruction.text = args.cocktail.strInstructions
+    }
+
+    private fun onClickListeners() = with(binding) {
+        btnBack.setOnClickListener {
+            findNavController().popBackStack()
+        }
     }
 
 }

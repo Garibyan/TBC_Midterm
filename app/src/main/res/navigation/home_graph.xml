@@ -2,7 +2,7 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/home"
+    android:id="@+id/home_graph"
     app:startDestination="@id/homeFragment2">
 
     <fragment
@@ -18,5 +18,9 @@
         android:id="@+id/cocktailDetailsFragment"
         android:name="com.garibyan.armen.tbc_midterm.view.tabs.CocktailDetailsFragment"
         android:label="fragment_cocktail_details"
-        tools:layout="@layout/fragment_cocktail_details" />
+        tools:layout="@layout/fragment_cocktail_details" >
+        <argument
+            android:name="cocktail"
+            app:argType="com.garibyan.armen.tbc_midterm.network.responcemodels.Cocktail" />
+    </fragment>
 </navigation>

@@ -3,7 +3,6 @@ package com.garibyan.armen.tbc_midterm.view.tabs
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.viewModels
-import androidx.navigation.Navigation
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
 import com.garibyan.armen.tbc_midterm.R
@@ -23,5 +22,4 @@ class TabsFragment : BaseFragment<FragmentTabsBinding>(
         val navController = navHost.navController
         NavigationUI.setupWithNavController(binding.bottomNavigation, navController)
     }
-
 }
