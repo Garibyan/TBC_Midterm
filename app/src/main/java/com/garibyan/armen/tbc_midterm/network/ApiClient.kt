@@ -47,9 +47,8 @@ interface ApiService {
     suspend fun getCocktailById(@Query("i") i: String): Cocktails
 
 
-
-
 // TODO: implement those 4 methods in one
+
 //    @GET("list.php?i=list")
 //    suspend fun getIngredients(): Cocktails
 //

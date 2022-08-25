@@ -6,6 +6,8 @@ class MainRepository(private val api: ApiService): BaseRepository() {
 
     suspend fun getPopularCocktails() = apiCall { api.getPopularCocktails() }
 
+    suspend fun getLatestCocktails() = apiCall { api.getLatestCocktails() }
+
     suspend fun getCocktailById(id: String) = apiCall { api.getCocktailById(id)}
 
 }

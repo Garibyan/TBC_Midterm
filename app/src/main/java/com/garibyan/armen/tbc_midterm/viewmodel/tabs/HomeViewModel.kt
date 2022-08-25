@@ -14,14 +14,24 @@ class HomeViewModel(
     private val repository: MainRepository = MainRepository(ApiClient.apiService)
 ) : ViewModel() {
 
-    private val _stateFlow = MutableStateFlow<Resource<Cocktails>>(Resource.Loading)
-    val stateFlow = _stateFlow.asStateFlow()
+    private val _popularCocktails = MutableStateFlow<Resource<Cocktails>>(Resource.Loading)
+    val popularCocktails = _popularCocktails.asStateFlow()
 
+    private val _latestCocktails = MutableStateFlow<Resource<Cocktails>>(Resource.Loading)
+    val latestCocktails = _latestCocktails.asStateFlow()
 
-    fun getCocktailById(id: String){
+    fun getPopularCocktails(){
         viewModelScope.launch {
-            repository.getCocktailById(id).collect{
-                _stateFlow.value = it
+            repository.getPopularCocktails().collect{
+                _popularCocktails.value = it
+            }
+        }
+    }
+
+    fun getLatestCocktails(){
+        viewModelScope.launch {
+            repository.getLatestCocktails().collect{
+                _latestCocktails.value = it
             }
         }
     }
