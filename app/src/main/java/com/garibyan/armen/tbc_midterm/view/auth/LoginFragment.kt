@@ -1,6 +1,7 @@
 package com.garibyan.armen.tbc_midterm.view.auth
 
 import android.os.Bundle
+import android.util.Patterns
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,6 +15,9 @@ import com.garibyan.armen.tbc_midterm.databinding.FragmentLoginBinding
 import com.garibyan.armen.tbc_midterm.repository.BaseRepository
 import com.garibyan.armen.tbc_midterm.view.BaseFragment
 import com.garibyan.armen.tbc_midterm.view.Inflate
+import com.garibyan.armen.tbc_midterm.view.auth.AuthenticationManager.getUser
+import com.garibyan.armen.tbc_midterm.view.auth.AuthenticationManager.isLoggedIn
+import com.garibyan.armen.tbc_midterm.view.auth.AuthenticationManager.login
 import com.garibyan.armen.tbc_midterm.viewmodel.auth.LoginViewModel
 import com.google.firebase.auth.FirebaseAuth
 
@@ -21,37 +25,60 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(
     FragmentLoginBinding::inflate
 ) {
 
-    private val viewModel: LoginViewModel by viewModels()
-    private lateinit var firebaseAuth: FirebaseAuth
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-
-        firebaseAuth = FirebaseAuth.getInstance()
-
-
-        binding.loginSingUp.setOnClickListener{
+        checkLoginInfo()
+        binding.loginSingUp.setOnClickListener {
             findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToRegistrationFragment())
         }
 
-        binding.logInBtn2.setOnClickListener {
-            val email = binding.logInEmail.text.toString()
-            val pass = binding.logInPassword.text.toString()
 
-            if (email.isNotEmpty() && pass.isNotEmpty()) {
+    }
 
-                firebaseAuth.signInWithEmailAndPassword(email, pass).addOnCompleteListener {
-                    if (it.isSuccessful) {
-                        findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToTabsFragment())
-                    } else {
-                       Toast.makeText(activity, it.exception.toString(), Toast.LENGTH_SHORT).show()
+    private fun checkLoginInputs(): Boolean {
+        if (binding.logInPassword.text.isNullOrEmpty())
+            return false
 
-                    }
+        if (binding.logInEmail.text.isNullOrEmpty() || !binding.logInEmail.text.isValidEmail())
+            return false
+
+        return true
+    }
+
+    private fun CharSequence?.isValidEmail() =
+        !isNullOrEmpty() && Patterns.EMAIL_ADDRESS.matcher(this).matches()
+
+    private fun checkLoginInfo() {
+        if (checkLoginInputs()) {
+            login(
+                binding.logInEmail.text.toString(),
+                binding.logInPassword.text.toString()
+            ) { isSuccess ->
+                if (isSuccess) {
+                    findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToTabsFragment())
+                } else {
+                    Toast.makeText(
+                        requireContext(),
+                        "Couldn't login, try again later!",
+                        Toast.LENGTH_SHORT
+                    ).show()
                 }
-            } else {
-                Toast.makeText(activity, "Empty Fields Are not Allowed !!", Toast.LENGTH_SHORT).show()
+            }
+        } else
+            Toast.makeText(
+                requireContext(),
+                "Input correct login credentionals!",
+                Toast.LENGTH_SHORT
+            ).show()
+    }
 
+    override fun onStart() {
+        super.onStart()
+        if (isLoggedIn()) {
+            getUser {
+                findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToTabsFragment())
             }
         }
     }

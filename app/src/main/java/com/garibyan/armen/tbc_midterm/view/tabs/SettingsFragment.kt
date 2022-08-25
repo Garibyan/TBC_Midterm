@@ -1,22 +1,37 @@
 package com.garibyan.armen.tbc_midterm.view.tabs
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
-import androidx.fragment.app.viewModels
-import com.garibyan.armen.tbc_midterm.R
+import androidx.navigation.fragment.findNavController
 import com.garibyan.armen.tbc_midterm.databinding.FragmentSettingsBinding
 import com.garibyan.armen.tbc_midterm.view.BaseFragment
-import com.garibyan.armen.tbc_midterm.viewmodel.tabs.SettingsViewModel
+import com.garibyan.armen.tbc_midterm.view.auth.AuthenticationManager
+import com.garibyan.armen.tbc_midterm.view.auth.User
+
 
 class SettingsFragment : BaseFragment<FragmentSettingsBinding>(
     FragmentSettingsBinding::inflate
 ) {
+    private  var mailTextView = binding.userName
 
-    private val viewModel: SettingsViewModel by viewModels()
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
 
-}
+        mailTextView.text = User.UserInstance.userData!!.email
+
+        binding.passChange.setOnClickListener {
+            findNavController().navigate(SettingsFragmentDirections.actionSettingsFragmentToPasswordResetFragment())
+        }
+
+        onClick()
+    }
+    private fun onClick (){
+            binding.logOutBtn.setOnClickListener {
+                AuthenticationManager.logOut()
+                findNavController().navigate(SettingsFragmentDirections.actionSettingsFragmentToWelcomeFragment2())
+            }
+
+        }
+    }
+
