@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "883139024849",
+    "project_id": "tbcmidterm-b7ae8",
+    "storage_bucket": "tbcmidterm-b7ae8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:883139024849:android:3c260aae7a8eb2595b32f0",
+        "android_client_info": {
+          "package_name": "com.garibyan.armen.tbc_midterm"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "883139024849-1ion72v9m4u8t9imnp99a2q28nqeotls.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyATh-t5iwhryH32TAwUs-6B7ye5NZA2sW0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "883139024849-1ion72v9m4u8t9imnp99a2q28nqeotls.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

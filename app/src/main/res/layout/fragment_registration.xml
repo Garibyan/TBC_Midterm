@@ -33,31 +33,37 @@
         />
 
     <EditText
+        android:id="@+id/regEmail"
         android:layout_width="320dp"
         android:layout_height="50dp"
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
         android:paddingLeft="20dp"
-        android:text="Email"
-        android:textColor="#ED7BA3"/>
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        android:textColorHint= "#ED7BA3"/>
 
     <EditText
+        android:id="@+id/regPass1"
+        android:layout_width="320dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:inputType = "textPassword"
+        android:paddingLeft="20dp"
+        android:textColorHint= "#ED7BA3"
+    android:hint="Password" />
+
+    <EditText
+        android:id="@+id/regPass2"
         android:layout_width="320dp"
         android:layout_height="50dp"
         android:layout_gravity="center"
         android:layout_marginTop="10dp"
         android:paddingLeft="20dp"
-        android:textColor="#ED7BA3"
-        android:text="Password" />
-
-    <EditText
-        android:layout_width="320dp"
-        android:layout_height="50dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="10dp"
-        android:paddingLeft="20dp"
-        android:textColor="#ED7BA3"
-        android:text="Confirm Password" />
+        android:inputType = "textPassword"
+        android:textColorHint= "#ED7BA3"
+        android:hint="Confirm Password" />
 
     <Button
         android:id="@+id/registerBtn2"
@@ -65,18 +71,25 @@
         android:layout_height="55dp"
         android:layout_gravity="center"
         android:layout_marginTop="15dp"
-
         android:background="@drawable/button"
         android:text="Sign Up"
 
         android:textColor="#fff" />
 
     <TextView
+        android:id="@+id/signUpLogIn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="10dp"
         android:text="Do you have an account? Sign In"
         android:textColor="#E91E63" />
+
+    <EditText
+        android:id="@+id/editTextTextEmailAddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textEmailAddress" />
 
 </LinearLayout>

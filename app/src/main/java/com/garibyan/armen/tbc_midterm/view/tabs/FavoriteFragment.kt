@@ -16,7 +16,7 @@ class FavoriteFragment : BaseFragment<FragmentFavoriteBinding>(
     FragmentFavoriteBinding::inflate
 ) {
 
-private val viewModel: FavoriteViewModel by viewModels()
+    private val viewModel: FavoriteViewModel by viewModels()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.NavHostFragment.Companion.findNavController
 import androidx.navigation.fragment.findNavController
 import com.garibyan.armen.tbc_midterm.R
 import com.garibyan.armen.tbc_midterm.databinding.FragmentWelcomeBinding

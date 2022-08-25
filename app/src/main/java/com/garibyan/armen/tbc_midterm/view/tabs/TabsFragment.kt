@@ -11,6 +11,7 @@ import com.garibyan.armen.tbc_midterm.databinding.FragmentTabsBinding
 import com.garibyan.armen.tbc_midterm.view.BaseFragment
 import com.garibyan.armen.tbc_midterm.viewmodel.tabs.TabsViewModel
 
+
 class TabsFragment : BaseFragment<FragmentTabsBinding>(
     FragmentTabsBinding::inflate
 ) {

@@ -49,6 +49,7 @@
         android:layout_gravity="center"
         android:layout_marginTop="10dp"
         android:text="@string/signup"
-        android:textColor="#68329b" />
+        android:background="@drawable/button2"
+        android:textColor="#E91E63" />
 
 </LinearLayout>
