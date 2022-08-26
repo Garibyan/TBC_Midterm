@@ -7,6 +7,7 @@ import android.widget.Toast
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.lifecycle.lifecycleScope
 import com.garibyan.armen.tbc_midterm.network.ApiClient
+import com.garibyan.armen.tbc_midterm.view.auth.AuthenticationManager
 
 class MainActivity : AppCompatActivity() {
 
@@ -19,6 +20,10 @@ class MainActivity : AppCompatActivity() {
         }
         setContentView(R.layout.activity_main)
 
+    }
+
+    private fun initFireBase(){
+        AuthenticationManager.initActivity(this)
     }
 
     override fun onBackPressed() {
