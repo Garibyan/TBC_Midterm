@@ -1,3 +1,21 @@
 <resources>
     <string name="app_name">TBC_Midterm</string>
+    <string name="login">Login</string>
+    <string name="signup">SignUp</string>
+    <string name="don_t_have_an_account_sign_up">Don\'t have an account? Sign Up</string>
+    <string name="log_in">Login</string>
+    <string name="password">Password</string>
+    <string name="email">Email</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="do_you_have_an_account_sign_in">Do you have an account? Sign In</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="sign_up_">SIGN UP</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="current_password">Current Password</string>
+    <string name="new_password">new Password</string>
+    <string name="popular_cocktails">Popular\nCocktails</string>
+    <string name="latest_cocktails">Latest\nCocktails</string>
+    <string name="category">Category:</string>
+    <string name="glass">Glass:</string>
+    <string name="retry">Retry</string>
 </resources>

@@ -20,10 +20,6 @@ class SettingsFragment : BaseFragment<FragmentSettingsBinding>(
 
         mailTextView.text = User.UserInstance.userData!!.email
 
-        binding.passChange.setOnClickListener {
-            findNavController().navigate(SettingsFragmentDirections.actionSettingsFragmentToPasswordResetFragment())
-        }
-
         onClick()
     }
     private fun onClick (){
@@ -31,7 +27,6 @@ class SettingsFragment : BaseFragment<FragmentSettingsBinding>(
                 AuthenticationManager.logOut()
                 findNavController().navigate(SettingsFragmentDirections.actionSettingsFragmentToWelcomeFragment2())
             }
-
         }
     }
 

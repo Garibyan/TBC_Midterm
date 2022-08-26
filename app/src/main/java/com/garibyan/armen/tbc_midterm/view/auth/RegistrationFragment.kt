@@ -22,12 +22,15 @@ class RegistrationFragment : BaseFragment<FragmentRegistrationBinding>(
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-
-        registerAccount()
-
         binding.signUpLogIn.setOnClickListener {
             findNavController().navigate(RegistrationFragmentDirections.actionRegistrationFragmentToLoginFragment())
+        }
+        onClick()
+    }
 
+    private fun onClick(){
+        binding.registerBtn2.setOnClickListener {
+            registerAccount()
         }
     }
 

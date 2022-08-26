@@ -75,7 +75,7 @@
         android:layout_height="55dp"
         android:layout_gravity="center"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="60dp"
         android:layout_marginEnd="32dp"
         android:background="@drawable/button"
         android:text="@string/log_in"
@@ -92,12 +92,25 @@
         android:layout_gravity="center"
         android:layout_marginStart="100dp"
         android:layout_marginEnd="100dp"
-        android:layout_marginBottom="60dp"
+        android:layout_marginBottom="44dp"
         android:text="@string/don_t_have_an_account_sign_up"
         android:textColor="#ED7BA3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/forgotPass"
+        android:layout_width="130dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="250dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginEnd="32dp"
+        android:text="Forgot password?"
+        android:textColor="#ED7BA3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logInPassword" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

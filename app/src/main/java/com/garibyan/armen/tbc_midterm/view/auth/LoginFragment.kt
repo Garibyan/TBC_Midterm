@@ -29,13 +29,23 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        checkLoginInfo()
-        binding.loginSingUp.setOnClickListener {
-            findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToRegistrationFragment())
+        onClick()
+    }
+
+     private fun onClick(){
+        binding.logInBtn2.setOnClickListener {
+            checkLoginInfo()
         }
 
+         binding.loginSingUp.setOnClickListener {
+             findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToRegistrationFragment())
+         }
 
+         binding.forgotPass.setOnClickListener {
+             findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToResetPasswordFragment())
+         }
     }
+
 
     private fun checkLoginInputs(): Boolean {
         if (binding.logInPassword.text.isNullOrEmpty())
