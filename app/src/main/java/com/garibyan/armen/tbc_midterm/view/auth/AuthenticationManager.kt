@@ -26,7 +26,7 @@ object AuthenticationManager: FirebaseAuthentication{
     override fun saveUser(user:User,resultLambda: (Boolean) -> Unit) {
         database.child("users").child(auth.currentUser!!.uid).setValue(user)
         database.child("users").child(auth.currentUser!!.uid).get().addOnSuccessListener {
-            User.UserInstance.userData = user
+            UserInstance.userData = user
             resultLambda.invoke(true)
         }.addOnFailureListener{
             resultLambda.invoke(false)
@@ -39,7 +39,7 @@ object AuthenticationManager: FirebaseAuthentication{
 
     override fun getUser(resultLambda: (Boolean) -> Unit) {
         database.child("users").get().addOnSuccessListener {
-            User.UserInstance.userData = it.child(auth.currentUser!!.uid).getValue(User::class.java) as User
+            UserInstance.userData = it.child(auth.currentUser!!.uid).getValue(User::class.java) as User
             resultLambda.invoke(true)
         }.addOnFailureListener{
             resultLambda.invoke(false)
@@ -47,25 +47,25 @@ object AuthenticationManager: FirebaseAuthentication{
     }
 
     override fun updatePassword(password: String, resultLambda: (Boolean) -> Unit) {
-        auth.currentUser?.updatePassword(password)?.addOnCompleteListener(activity?.get()!!) { task->
+        auth.currentUser?.updatePassword(password)?.addOnCompleteListener { task->
             resultLambda(task.isSuccessful)
         }
     }
 
     override fun passwordReset(email: String, resultLambda: (Boolean) -> Unit) {
-        auth.sendPasswordResetEmail(email).addOnCompleteListener(activity?.get()!!) { task ->
+        auth.sendPasswordResetEmail(email).addOnCompleteListener { task ->
             resultLambda(task.isSuccessful)
         }
     }
 
     override fun login(email: String, password:String,resultLambda: (Boolean) -> Unit) {
-        auth.signInWithEmailAndPassword(email, password).addOnCompleteListener(activity?.get()!!) { task ->
+        auth.signInWithEmailAndPassword(email, password).addOnCompleteListener { task ->
             resultLambda(task.isSuccessful)
         }
     }
 
     override fun register(user: User,password: String,resultLambda: (Boolean) -> Unit) {
-        auth.createUserWithEmailAndPassword(user.email, password).addOnCompleteListener(activity?.get()!!) { task ->
+        auth.createUserWithEmailAndPassword(user.email, password).addOnCompleteListener { task ->
             if(task.isSuccessful){
                 saveUser(user,resultLambda)
             }else

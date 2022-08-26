@@ -8,6 +8,7 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.NavHostFragment.Companion.findNavController
 import androidx.navigation.fragment.findNavController
+import com.garibyan.armen.tbc_midterm.R
 import com.garibyan.armen.tbc_midterm.databinding.FragmentRegistrationBinding
 import com.garibyan.armen.tbc_midterm.view.BaseFragment
 import com.garibyan.armen.tbc_midterm.view.auth.AuthenticationManager.register
@@ -16,21 +17,25 @@ import com.google.firebase.auth.FirebaseAuth
 
 class RegistrationFragment : BaseFragment<FragmentRegistrationBinding>(
     FragmentRegistrationBinding::inflate
-) {
+),View.OnClickListener {
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        clickListener()
+    }
+
+    private fun clickListener(){
+        binding.registerBtn2.setOnClickListener(this)
 
         binding.signUpLogIn.setOnClickListener {
             findNavController().navigate(RegistrationFragmentDirections.actionRegistrationFragmentToLoginFragment())
         }
-        onClick()
     }
 
-    private fun onClick(){
-        binding.registerBtn2.setOnClickListener {
-            registerAccount()
+    override fun onClick(v: View?) {
+        when (v!!.id) {
+            R.id.registerBtn2 -> registerAccount()
         }
     }
 
@@ -38,10 +43,6 @@ class RegistrationFragment : BaseFragment<FragmentRegistrationBinding>(
 
             if (binding.regPass1.text.isNullOrEmpty())
                 return false
-
-            if (binding.regPass2.text.isNullOrEmpty())
-                return false
-
 
             if (binding.regEmail.text.isNullOrEmpty() || !binding.regEmail.text.isValidEmail())
                 return false
@@ -55,10 +56,12 @@ class RegistrationFragment : BaseFragment<FragmentRegistrationBinding>(
 
     private fun registerAccount() {
         if (checkInputs()){
-            val user = User( binding.regEmail.text.toString())
-            register(user, binding.regPass1.text.toString()) { isSuccess ->
+            var registerEmail = binding.regEmail
+            var registerPassword = binding.regPass1
+            val user = User(registerEmail.text.toString())
+            register(user, registerPassword.text.toString()) { isSuccess ->
                 if (isSuccess) {
-                    findNavController().navigate(RegistrationFragmentDirections.actionRegistrationFragmentToLoginFragment())
+                    navigateLogInPage()
                 } else {
                     Toast.makeText(
                         requireContext(),
@@ -72,8 +75,11 @@ class RegistrationFragment : BaseFragment<FragmentRegistrationBinding>(
             Toast.makeText(requireContext(), "Your input is not correct", Toast.LENGTH_SHORT).show()
     }
 
-
-
+    private fun navigateLogInPage() {
+        findNavController().navigate(RegistrationFragmentDirections.actionRegistrationFragmentToLoginFragment())
     }
+
+
+}
 
 

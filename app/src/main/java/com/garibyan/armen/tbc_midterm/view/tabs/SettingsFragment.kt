@@ -7,6 +7,7 @@ import com.garibyan.armen.tbc_midterm.databinding.FragmentSettingsBinding
 import com.garibyan.armen.tbc_midterm.view.BaseFragment
 import com.garibyan.armen.tbc_midterm.view.auth.AuthenticationManager
 import com.garibyan.armen.tbc_midterm.view.auth.User
+import com.garibyan.armen.tbc_midterm.view.auth.UserInstance
 
 
 class SettingsFragment : BaseFragment<FragmentSettingsBinding>(
@@ -18,7 +19,7 @@ class SettingsFragment : BaseFragment<FragmentSettingsBinding>(
         super.onViewCreated(view, savedInstanceState)
 
 
-        mailTextView.text = User.UserInstance.userData!!.email
+        mailTextView.text = UserInstance.userData!!.email
 
         onClick()
     }

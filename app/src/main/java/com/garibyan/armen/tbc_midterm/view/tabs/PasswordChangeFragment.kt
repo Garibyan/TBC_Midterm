@@ -30,7 +30,6 @@ class PasswordChangeFragment : BaseFragment<FragmentRecoveryPassword2Binding>(
             updatePassword(binding.recPass2New.text.toString()){ isSuccess->
                 if(isSuccess){
                     Toast.makeText(requireContext(), "Password has changed", Toast.LENGTH_SHORT).show()
-                    findNavController().popBackStack()
                 }else{
                     Toast.makeText(requireContext(), "Password has not changed", Toast.LENGTH_SHORT).show()
                 }

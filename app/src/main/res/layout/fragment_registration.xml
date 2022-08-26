@@ -61,31 +61,16 @@
         android:layout_height="50dp"
         android:layout_gravity="center"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="40dp"
         android:layout_marginEnd="32dp"
         android:hint="@string/password"
         android:inputType="textPassword"
         android:paddingLeft="20dp"
         android:textColorHint="#ED7BA3"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.518"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/regEmail" />
-
-    <EditText
-        android:id="@+id/regPass2"
-        android:layout_width="320dp"
-        android:layout_height="50dp"
-        android:layout_gravity="center"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="32dp"
-        android:hint="@string/confirm_password"
-        android:inputType="textPassword"
-        android:paddingLeft="20dp"
-        android:textColorHint="#ED7BA3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/regPass1" />
 
     <Button
         android:id="@+id/registerBtn2"
@@ -93,15 +78,16 @@
         android:layout_height="55dp"
         android:layout_gravity="center"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="16dp"
 
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="32dp"
         android:background="@drawable/button"
         android:text="@string/sign_up"
         android:textColor="#fff"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.518"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/regPass2" />
+        app:layout_constraintTop_toBottomOf="@+id/regPass1" />
 
     <TextView
         android:id="@+id/signUpLogIn"

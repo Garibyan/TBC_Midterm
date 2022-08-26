@@ -11,6 +11,7 @@ import androidx.lifecycle.ViewModel
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.NavHostFragment.Companion.findNavController
 import androidx.navigation.fragment.findNavController
+import com.garibyan.armen.tbc_midterm.R
 import com.garibyan.armen.tbc_midterm.databinding.FragmentLoginBinding
 import com.garibyan.armen.tbc_midterm.repository.BaseRepository
 import com.garibyan.armen.tbc_midterm.view.BaseFragment
@@ -23,27 +24,32 @@ import com.google.firebase.auth.FirebaseAuth
 
 class LoginFragment : BaseFragment<FragmentLoginBinding>(
     FragmentLoginBinding::inflate
-) {
+), View.OnClickListener {
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        onClick()
+        binding.logInBtn2.setOnClickListener(this)
+
+        onClickListener()
     }
 
-     private fun onClick(){
-        binding.logInBtn2.setOnClickListener {
-            checkLoginInfo()
+    override fun onClick(v: View?) {
+        when (v!!.id) {
+            R.id.logInBtn2 -> checkLoginInfo()
+        }
+    }
+
+    private fun onClickListener() {
+
+        binding.loginSingUp.setOnClickListener {
+            findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToRegistrationFragment())
         }
 
-         binding.loginSingUp.setOnClickListener {
-             findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToRegistrationFragment())
-         }
-
-         binding.forgotPass.setOnClickListener {
-             findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToResetPasswordFragment())
-         }
+        binding.forgotPass.setOnClickListener {
+            findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToResetPasswordFragment())
+        }
     }
 
 
@@ -60,36 +66,25 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(
     private fun CharSequence?.isValidEmail() =
         !isNullOrEmpty() && Patterns.EMAIL_ADDRESS.matcher(this).matches()
 
-    private fun checkLoginInfo() {
-        if (checkLoginInputs()) {
-            login(
-                binding.logInEmail.text.toString(),
-                binding.logInPassword.text.toString()
-            ) { isSuccess ->
-                if (isSuccess) {
-                    findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToTabsFragment())
-                } else {
-                    Toast.makeText(
-                        requireContext(),
-                        "Couldn't login, try again later!",
-                        Toast.LENGTH_SHORT
-                    ).show()
+    private fun checkLoginInfo(){
+        if(checkLoginInputs()){
+            val logInEmail = binding.logInEmail
+            val logInPassword = binding.logInPassword
+            login(logInEmail.text.toString(),logInPassword.text.toString()){ isSuccess->
+                if(isSuccess){
+                    navigateToHome()
+                }else{
+                    Toast.makeText(requireContext(), "Couldn't login, try again later!", Toast.LENGTH_SHORT).show()
                 }
             }
-        } else
-            Toast.makeText(
-                requireContext(),
-                "Input correct login credentionals!",
-                Toast.LENGTH_SHORT
-            ).show()
+        }else
+            Toast.makeText(requireContext(), "Input correct login credentials!", Toast.LENGTH_SHORT).show()
     }
 
-    override fun onStart() {
-        super.onStart()
-        if (isLoggedIn()) {
-            getUser {
-                findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToTabsFragment())
-            }
-        }
+
+    private fun navigateToHome() {
+        findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToTabsFragment())
+
     }
 }
+
