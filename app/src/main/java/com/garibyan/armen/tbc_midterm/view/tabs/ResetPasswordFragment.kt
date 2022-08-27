@@ -5,7 +5,9 @@ import android.util.Patterns
 import android.view.View
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
+import com.garibyan.armen.tbc_midterm.R
 import com.garibyan.armen.tbc_midterm.databinding.FragmentRecoveryPasswordBinding
+import com.garibyan.armen.tbc_midterm.extentions.toast
 import com.garibyan.armen.tbc_midterm.view.BaseFragment
 import com.garibyan.armen.tbc_midterm.view.auth.AuthenticationManager.passwordReset
 
@@ -34,9 +36,10 @@ class ResetPasswordFragment : BaseFragment<FragmentRecoveryPasswordBinding>(
         if(binding.resetPassEmail.text.isNotEmpty() && binding.resetPassEmail.text.isValidEmail()){
             passwordReset(binding.resetPassEmail.text.toString()){ isSuccess ->
                 if(isSuccess)
-                    Toast.makeText(requireContext(), "Reset message is sent on the mail!", Toast.LENGTH_SHORT).show()
+                requireContext().toast(getString(R.string.reset_message_is_sent_on_the_mail))
+
                 else
-                    Toast.makeText(requireContext(), "Try again later", Toast.LENGTH_SHORT).show()
+                requireContext().toast(getString(R.string.try_again_later))
 
                 findNavController().popBackStack()
             }

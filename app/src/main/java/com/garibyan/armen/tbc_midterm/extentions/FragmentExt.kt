@@ -25,3 +25,4 @@ fun Fragment.findTopNavController(): NavController {
         requireActivity().supportFragmentManager.findFragmentById(R.id.fragmentContainer) as NavHostFragment?
     return topLevelHost?.navController ?: findNavController()
 }
+

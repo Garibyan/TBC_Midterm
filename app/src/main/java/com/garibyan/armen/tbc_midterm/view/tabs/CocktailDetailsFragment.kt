@@ -13,9 +13,10 @@ import coil.load
 import com.garibyan.armen.tbc_midterm.R
 import com.garibyan.armen.tbc_midterm.databinding.FragmentCocktailDetailsBinding
 import com.garibyan.armen.tbc_midterm.extentions.collectLatestFlow
+import com.garibyan.armen.tbc_midterm.extentions.toast
 import com.garibyan.armen.tbc_midterm.network.Resource
 import com.garibyan.armen.tbc_midterm.network.responcemodels.Cocktail
-import com.garibyan.armen.tbc_midterm.utils.DetailsTabRequestType
+import com.garibyan.armen.tbc_midterm.utils.HomeTabRequestTypes
 import com.garibyan.armen.tbc_midterm.view.BaseFragment
 import com.garibyan.armen.tbc_midterm.viewmodel.tabs.CocktailDetailsViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -52,7 +53,7 @@ class CocktailDetailsFragment : BaseFragment<FragmentCocktailDetailsBinding>(
 
     private fun getRequestByType(){
         when(args.requestType){
-            DetailsTabRequestType.REQUEST_COCKTAIL_BY_ID -> {
+            HomeTabRequestTypes.REQUEST_COCKTAIL_BY_ID -> {
                 viewModel.getCocktailById(args.cocktailId!!)
             }
             DetailsTabRequestType.REQUEST_RANDOM_COCKTAIL -> {
@@ -102,9 +103,9 @@ class CocktailDetailsFragment : BaseFragment<FragmentCocktailDetailsBinding>(
         mainInfo.visibility = View.GONE
         btnRetry.visibility = View.VISIBLE
         if (isNetworkError) {
-            Toast.makeText(requireContext(), "Network error", Toast.LENGTH_SHORT).show()
+            requireContext().toast(getString(R.string.network_error))
         } else {
-            Toast.makeText(requireContext(), "Something went wrong", Toast.LENGTH_SHORT).show()
+            requireContext().toast(getString(R.string.something_went_wrong))
         }
     }
 

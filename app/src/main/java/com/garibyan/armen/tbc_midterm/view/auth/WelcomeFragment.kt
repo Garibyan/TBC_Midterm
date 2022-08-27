@@ -7,6 +7,8 @@ import androidx.navigation.fragment.findNavController
 import com.garibyan.armen.tbc_midterm.databinding.FragmentWelcomeBinding
 import com.garibyan.armen.tbc_midterm.extentions.collectLatestFlow
 import com.garibyan.armen.tbc_midterm.view.BaseFragment
+import com.garibyan.armen.tbc_midterm.view.auth.AuthenticationManager.getUser
+import com.garibyan.armen.tbc_midterm.view.auth.AuthenticationManager.isLoggedIn
 import com.garibyan.armen.tbc_midterm.viewmodel.auth.WelcomeViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -39,8 +41,8 @@ class WelcomeFragment : BaseFragment<FragmentWelcomeBinding>(
     }
 
     private fun checkSession() {
-        collectLatestFlow(viewModel.checkUserSession()) {
-            if (it != "") {
+        if (isLoggedIn()) {
+            getUser {
                 findNavController().navigate(WelcomeFragmentDirections.actionWelcomeFragmentToTabsFragment())
             }
         }

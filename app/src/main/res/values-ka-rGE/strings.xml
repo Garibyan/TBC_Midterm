@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TBC_Midterm</string>
+    <string name="login">შესვლა</string>
+    <string name="signup">რეგისტრაცია</string>
+    <string name="don_t_have_an_account_sign_up">არ გაქვს აქაუნთი? დარეგისტრირდი</string>
+    <string name="log_in">შესვლა</string>
+    <string name="password">პაროლი</string>
+    <string name="email">მაილი</string>
+    <string name="sign_up">რეგისტრაცია</string>
+    <string name="do_you_have_an_account_sign_in">გაქვს აქაუნთი? შემოდი</string>
+    <string name="confirm_password">დაადასტურე პაროლი</string>
+    <string name="sign_up_">რეგისტრაცია</string>
+    <string name="current_password">ამჟამინდელი პაროლი</string>
+    <string name="new_password">ახალი პაროლი</string>
+    <string name="popular_cocktails">პოპულარული კოკტეილი</string>
+    <string name="category">კატეგორია</string>
+    <string name="glass">ჭიქა</string>
+    <string name="retry">ხელახლა ცდა</string>
+    <string name="double_backpress">დააჭირეთ უკან აპლიკაციის დასატოვებლად</string>
+    <string name="couldnot_login_try_again_later">ვერ შედიხართ, მოგვიანებით სცადეთ!</string>
+    <string name="input_correct_login_credentials">არასწორი მონაცემები</string>
+    <string name="couldnot_create_account_try_again_later">ვერ ხერხდება რეგისტრაცია, მოგვიანებით სცადეთ</string>
+    <string name="your_input_is_not_correct">არასწორი მონაცემები</string>
+    <string name="network_error">კავშირის პრობლემა</string>
+    <string name="password_has_changed">პაროლი შეცვლილია</string>
+    <string name="something_went_wrong">პრობლემა</string>
+    <string name="password_has_not_changed">პაროლის შეცვლა ვერ მოხერხდა</string>
+    <string name="input_is_incorrect">"არასწორია "</string>
+    <string name="reset_message_is_sent_on_the_mail">წერილი მოგივიდა ...</string>
+    <string name="try_again_later">ოგვიანებით სცადეთ</string>
+</resources>

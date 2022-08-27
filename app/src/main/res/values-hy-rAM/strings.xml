@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TBC_Midterm</string>
+    <string name="login">մուտք գործել</string>
+    <string name="log_in">մուտք գործել</string>
+    <string name="signup">Գրանցում</string>
+    <string name="sign_up">Գրանցում</string>
+    <string name="sign_up_">Գրանցում</string>
+    <string name="don_t_have_an_account_sign_up">Չունե՞ք հաշիվ: Գրանցվել</string>
+    <string name="password">գաղտնաբառը</string>
+    <string name="email">մղոն</string>
+    <string name="do_you_have_an_account_sign_in">ունե՞ք հաշիվ ներս արի</string>
+    <string name="confirm_password">Հաստատել գաղտնաբառը</string>
+    <string name="current_password">ընթացիկ գաղտնաբառը</string>
+    <string name="new_password">նոր ծածկագիր</string>
+    <string name="popular_cocktails">Հանրաճանաչ կոկտեյլ</string>
+    <string name="category">կատեգորիա</string>
+    <string name="glass">բաժակ</string>
+    <string name="retry">Նորից փորձեք</string>
+    <string name="double_backpress">Սեղմեք Հետ՝ հավելվածից դուրս գալու համար</string>
+    <string name="couldnot_login_try_again_later">Չհաջողվեց մուտք գործել: Փորձեք ավելի ուշ:</string>
+    <string name="input_correct_login_credentials">Սխալ տվյալներ</string>
+    <string name="couldnot_create_account_try_again_later">Չհաջողվեց գրանցվել, փորձեք ավելի ուշ</string>
+    <string name="your_input_is_not_correct">Սխալ տվյալներ</string>
+    <string name="network_error">Միացման խնդիր</string>
+    <string name="something_went_wrong">Ինչ - որ բան սխալ է</string>
+    <string name="password_has_changed">Գաղտնաբառը փոխված է</string>
+    <string name="password_has_not_changed">Դու չես կարող փոխել եղբորս</string>
+    <string name="input_is_incorrect">սխալ է</string>
+    <string name="reset_message_is_sent_on_the_mail">Դուք նամակ եք ստացել...</string>
+    <string name="try_again_later">Փորձեք ավելի ուշ</string>
+</resources>

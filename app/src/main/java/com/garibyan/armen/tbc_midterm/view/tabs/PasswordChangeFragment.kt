@@ -4,7 +4,9 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
+import com.garibyan.armen.tbc_midterm.R
 import com.garibyan.armen.tbc_midterm.databinding.FragmentRecoveryPassword2Binding
+import com.garibyan.armen.tbc_midterm.extentions.toast
 import com.garibyan.armen.tbc_midterm.view.BaseFragment
 import com.garibyan.armen.tbc_midterm.view.auth.AuthenticationManager.updatePassword
 
@@ -28,14 +30,15 @@ class PasswordChangeFragment : BaseFragment<FragmentRecoveryPassword2Binding>(
         if(checkInputs()){
             updatePassword(binding.recPass2New.text.toString()){ isSuccess->
                 if(isSuccess){
-                    Toast.makeText(requireContext(), "Password has changed", Toast.LENGTH_SHORT).show()
+                    requireContext().toast(getString(R.string.password_has_changed))
                     findNavController().popBackStack()
                 }else{
-                    Toast.makeText(requireContext(), "Password has not changed", Toast.LENGTH_SHORT).show()
+                    requireContext().toast(getString(R.string.password_has_not_changed))
                 }
             }
         }else{
-            Toast.makeText(requireContext(), "Input is incorrect", Toast.LENGTH_SHORT).show()
+            requireContext().toast(getString(R.string.input_is_incorrect))
+
         }
     }
 

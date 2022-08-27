@@ -7,9 +7,11 @@ import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.garibyan.armen.tbc_midterm.R
 import com.garibyan.armen.tbc_midterm.adapters.CategoriesAdapter
 import com.garibyan.armen.tbc_midterm.databinding.FragmentCategoriesBinding
 import com.garibyan.armen.tbc_midterm.extentions.collectLatestFlow
+import com.garibyan.armen.tbc_midterm.extentions.toast
 import com.garibyan.armen.tbc_midterm.network.Resource
 import com.garibyan.armen.tbc_midterm.network.responcemodels.Category
 import com.garibyan.armen.tbc_midterm.utils.HomeTabRequestTypes
@@ -85,9 +87,9 @@ class CategoriesFragment : BaseFragment<FragmentCategoriesBinding>(
         rvCategories.visibility = View.GONE
         btnRetry.visibility = View.VISIBLE
         if (isNetworkError) {
-            Toast.makeText(requireContext(), "Network error", Toast.LENGTH_SHORT).show()
+            requireContext().toast(getString(R.string.network_error))
         } else {
-            Toast.makeText(requireContext(), "Something went wrong", Toast.LENGTH_SHORT).show()
+            requireContext().toast(getString(R.string.something_went_wrong))
         }
     }
 

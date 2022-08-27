@@ -7,6 +7,7 @@ import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.garibyan.armen.tbc_midterm.R
 import com.garibyan.armen.tbc_midterm.databinding.FragmentRegistrationBinding
+import com.garibyan.armen.tbc_midterm.extentions.toast
 import com.garibyan.armen.tbc_midterm.view.BaseFragment
 import com.garibyan.armen.tbc_midterm.view.auth.AuthenticationManager.register
 
@@ -56,15 +57,12 @@ class RegistrationFragment : BaseFragment<FragmentRegistrationBinding>(
                 if (isSuccess) {
                     findNavController().navigate(RegistrationFragmentDirections.actionRegistrationFragmentToLoginFragment(registerEmail))
                 } else {
-                    Toast.makeText(
-                        requireContext(),
-                        "Couldn't create account, try again later!",
-                        Toast.LENGTH_SHORT
-                    ).show()
+                    requireContext().toast(getString(R.string.couldnot_create_account_try_again_later))
                 }
             }
         } else
-            Toast.makeText(requireContext(), "Your input is not correct", Toast.LENGTH_SHORT).show()
+        requireContext().toast(getString(R.string.your_input_is_not_correct))
+
     }
 
 }

@@ -1,5 +1,6 @@
 package com.garibyan.armen.tbc_midterm.view.auth
 
+import android.content.Context
 import android.os.Bundle
 import android.util.Patterns
 import android.view.View
@@ -9,6 +10,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.garibyan.armen.tbc_midterm.R
 import com.garibyan.armen.tbc_midterm.databinding.FragmentLoginBinding
+import com.garibyan.armen.tbc_midterm.extentions.toast
 import com.garibyan.armen.tbc_midterm.view.BaseFragment
 import com.garibyan.armen.tbc_midterm.view.auth.AuthenticationManager.auth
 import com.garibyan.armen.tbc_midterm.view.auth.AuthenticationManager.login
@@ -32,8 +34,8 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(
         onClickListener()
     }
 
-    private fun setEmail(){
-        if (args.email != null){
+    private fun setEmail() {
+        if (args.email != null) {
             binding.logInEmail.setText(args.email)
         }
     }
@@ -74,16 +76,13 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(
                 if (isSuccess) {
                     findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToTabsFragment())
                 } else {
-                    Toast.makeText(
-                        requireContext(),
-                        "Couldn't login, try again later!",
-                        Toast.LENGTH_SHORT
-                    ).show()
+                    requireContext().toast(
+                        getString(R.string.couldnot_login_try_again_later),
+                    )
                 }
             }
         } else
-            Toast.makeText(requireContext(), "Input correct login credentials!", Toast.LENGTH_SHORT)
-                .show()
+                requireContext().toast(getString(R.string.input_correct_login_credentials))
     }
 }
 
