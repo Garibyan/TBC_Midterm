@@ -1,13 +1,20 @@
 package com.garibyan.armen.tbc_midterm.repository
 
 import com.garibyan.armen.tbc_midterm.network.ApiService
+import javax.inject.Inject
 
-class MainRepository(private val api: ApiService): BaseRepository() {
+class MainRepository @Inject constructor(private val apiService: ApiService): BaseRepository() {
 
-    suspend fun getPopularCocktails() = apiCall { api.getPopularCocktails() }
+    suspend fun getPopularCocktails() = apiCall { apiService.getPopularCocktails() }
 
-    suspend fun getLatestCocktails() = apiCall { api.getLatestCocktails() }
+    suspend fun getLatestCocktails() = apiCall { apiService.getLatestCocktails() }
 
-    suspend fun getCocktailById(id: String) = apiCall { api.getCocktailById(id)}
+    suspend fun getRandomTenCocktails() = apiCall { apiService.getTenRandomCocktails() }
+    suspend fun getAllCategories() = apiCall { apiService.getCategories() }
+
+    suspend fun getCocktailsByCategory(category: String) = apiCall { apiService.getCocktailByCategory(category) }
+
+    suspend fun getCocktailById(id: String) = apiCall { apiService.getCocktailById(id)}
+
 
 }

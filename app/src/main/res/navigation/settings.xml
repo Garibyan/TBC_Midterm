@@ -13,16 +13,9 @@
         <action
             android:id="@+id/action_settingsFragment_to_passwordResetFragment"
             app:destination="@id/passwordResetFragment" />
-        <action
-            android:id="@+id/action_settingsFragment_to_welcomeFragment2"
-            app:destination="@id/welcomeFragment2" />
     </fragment>
     <fragment
         android:id="@+id/passwordResetFragment"
         android:name="com.garibyan.armen.tbc_midterm.view.tabs.PasswordResetFragment"
         android:label="PasswordResetFragment" />
-    <fragment
-        android:id="@+id/welcomeFragment2"
-        android:name="com.garibyan.armen.tbc_midterm.view.auth.WelcomeFragment"
-        android:label="WelcomeFragment" />
 </navigation>

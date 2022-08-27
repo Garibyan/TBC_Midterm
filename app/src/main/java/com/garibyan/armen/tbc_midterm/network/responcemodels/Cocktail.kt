@@ -12,6 +12,6 @@ data class Cocktail(
     val strCategory: String? = null,
     val strAlcoholic: String? = null,
     val strGlass: String? = null,
-    val strInstructions: String? = null,
+    val strInstructions: String,
     val strDrinkThumb: String? = null
-): Parcelable
+) : Parcelable

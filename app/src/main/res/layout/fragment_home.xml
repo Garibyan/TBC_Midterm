@@ -7,72 +7,79 @@
     android:padding="15dp"
     tools:context=".view.tabs.HomeFragment">
 
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:weightSum="2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btnPopularCocktails"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:text="@string/popular_cocktails"
-            android:textSize="20sp" />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btnLatestCocktails"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:text="@string/latest_cocktails"
-            android:textSize="20sp" />
-
-    </LinearLayout>
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvMain"
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txtRandomCocktail"
         android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="20dp"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        app:layout_constraintVertical_bias="0.0"
-        tools:listitem="@layout/cocktail_item" />
-
-    <ProgressBar
-        android:id="@+id/progressBar"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@drawable/button"
+        android:text="Random Cocktail"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:padding="20dp"
+        android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/linearLayout"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnRetry"
-        android:layout_width="wrap_content"
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txtRandomTenCocktail"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="30dp"
-        android:padding="10dp"
-        android:text="@string/retry"
+        android:background="@drawable/button"
+        android:text="Random 10 Cocktails"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:padding="20dp"
         android:textSize="25sp"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtRandomCocktail" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txtPopularCocktails"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button"
+        android:text="Popular Cocktails"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:padding="20dp"
+        android:textSize="25sp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtRandomTenCocktail" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txtLatestCocktails"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button"
+        android:text="Latest Cocktails"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:padding="20dp"
+        android:textSize="25sp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtPopularCocktails" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txtSearchByCategory"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button"
+        android:text="Search by category"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:padding="20dp"
+        android:textSize="25sp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtLatestCocktails" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

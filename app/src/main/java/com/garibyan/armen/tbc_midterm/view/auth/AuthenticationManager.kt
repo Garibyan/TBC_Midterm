@@ -11,7 +11,7 @@ object AuthenticationManager: FirebaseAuthentication{
 
     private var activity: WeakReference<Activity>? = null
 
-    private var auth: FirebaseAuth = FirebaseAuth.getInstance()
+    var auth: FirebaseAuth = FirebaseAuth.getInstance()
 
     private var database: DatabaseReference = Firebase.database.reference
 

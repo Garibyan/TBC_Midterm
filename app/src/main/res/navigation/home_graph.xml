@@ -13,6 +13,12 @@
         <action
             android:id="@+id/action_homeFragment2_to_cocktailDetailsFragment"
             app:destination="@id/cocktailDetailsFragment" />
+        <action
+            android:id="@+id/action_homeFragment2_to_cocktailsListFragment"
+            app:destination="@id/cocktailsListFragment" />
+        <action
+            android:id="@+id/action_homeFragment2_to_categoriesFragment"
+            app:destination="@id/categoriesFragment" />
     </fragment>
     <fragment
         android:id="@+id/cocktailDetailsFragment"
@@ -20,7 +26,32 @@
         android:label="fragment_cocktail_details"
         tools:layout="@layout/fragment_cocktail_details" >
         <argument
-            android:name="cocktail"
-            app:argType="com.garibyan.armen.tbc_midterm.network.responcemodels.Cocktail" />
+            android:name="cocktailId"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/cocktailsListFragment"
+        android:name="com.garibyan.armen.tbc_midterm.view.tabs.CocktailsListFragment"
+        android:label="fragment_cocktails_list"
+        tools:layout="@layout/fragment_cocktails_list" >
+        <argument
+            android:name="requestType"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_cocktailsListFragment_to_cocktailDetailsFragment"
+            app:destination="@id/cocktailDetailsFragment" />
+        <argument
+            android:name="category"
+            app:argType="string"
+            app:nullable="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/categoriesFragment"
+        android:name="com.garibyan.armen.tbc_midterm.view.tabs.CategoriesFragment"
+        android:label="fragment_categories"
+        tools:layout="@layout/fragment_categories" >
+        <action
+            android:id="@+id/action_categoriesFragment_to_cocktailsListFragment"
+            app:destination="@id/cocktailsListFragment" />
     </fragment>
 </navigation>

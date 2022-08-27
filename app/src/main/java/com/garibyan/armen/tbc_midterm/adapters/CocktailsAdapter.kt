@@ -8,7 +8,6 @@ import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import coil.transform.CircleCropTransformation
 import com.garibyan.armen.tbc_midterm.databinding.CocktailItemBinding
-import com.garibyan.armen.tbc_midterm.databinding.FragmentCocktailDetailsBinding
 import com.garibyan.armen.tbc_midterm.network.responcemodels.Cocktail
 
 class CocktailsAdapter :

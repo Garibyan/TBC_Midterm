@@ -3,16 +3,21 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/AndroidProjects/TBC_Midterm/app/src/main/res/drawable/button.xml" value="0.1145" />
         <entry key="..\:/AndroidProjects/TBC_Midterm/app/src/main/res/drawable/ic_arrow_back.xml" value="0.1915" />
         <entry key="..\:/AndroidProjects/TBC_Midterm/app/src/main/res/drawable/ic_baseline_assured_workload_24.xml" value="0.145" />
         <entry key="..\:/AndroidProjects/TBC_Midterm/app/src/main/res/drawable/ic_favorite.xml" value="0.102" />
         <entry key="..\:/AndroidProjects/TBC_Midterm/app/src/main/res/drawable/ic_settings.xml" value="0.1" />
         <entry key="..\:/AndroidProjects/TBC_Midterm/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/AndroidProjects/TBC_Midterm/app/src/main/res/layout/cateroty_item.xml" value="0.2046875" />
         <entry key="..\:/AndroidProjects/TBC_Midterm/app/src/main/res/layout/cocktail_item.xml" value="0.33" />
-        <entry key="..\:/AndroidProjects/TBC_Midterm/app/src/main/res/layout/fragment_cocktail_details.xml" value="0.25" />
+        <entry key="..\:/AndroidProjects/TBC_Midterm/app/src/main/res/layout/fragment_categories.xml" value="0.15" />
+        <entry key="..\:/AndroidProjects/TBC_Midterm/app/src/main/res/layout/fragment_cocktail_details.xml" value="0.2" />
+        <entry key="..\:/AndroidProjects/TBC_Midterm/app/src/main/res/layout/fragment_cocktails_list.xml" value="0.11944444444444445" />
         <entry key="..\:/AndroidProjects/TBC_Midterm/app/src/main/res/layout/fragment_favorite.xml" value="0.20572916666666666" />
         <entry key="..\:/AndroidProjects/TBC_Midterm/app/src/main/res/layout/fragment_home.xml" value="0.18" />
         <entry key="..\:/AndroidProjects/TBC_Midterm/app/src/main/res/layout/fragment_login.xml" value="0.20572916666666666" />
+        <entry key="..\:/AndroidProjects/TBC_Midterm/app/src/main/res/layout/fragment_recovery_password.xml" value="0.20572916666666666" />
         <entry key="..\:/AndroidProjects/TBC_Midterm/app/src/main/res/layout/fragment_registration.xml" value="0.20572916666666666" />
         <entry key="..\:/AndroidProjects/TBC_Midterm/app/src/main/res/layout/fragment_settings.xml" value="0.20572916666666666" />
         <entry key="..\:/AndroidProjects/TBC_Midterm/app/src/main/res/layout/fragment_tabs.xml" value="0.2" />
@@ -28,7 +33,7 @@
         <entry key="..\:/Users/salom/AndroidStudioProjects/TBC_Midterm/app/src/main/res/layout/fragment_password_reset.xml" value="0.2" />
         <entry key="..\:/Users/salom/AndroidStudioProjects/TBC_Midterm/app/src/main/res/layout/fragment_recovery_password.xml" value="0.264" />
         <entry key="..\:/Users/salom/AndroidStudioProjects/TBC_Midterm/app/src/main/res/layout/fragment_recovery_password2.xml" value="0.264" />
-        <entry key="..\:/Users/salom/AndroidStudioProjects/TBC_Midterm/app/src/main/res/layout/fragment_registration.xml" value="0.25" />
+        <entry key="..\:/Users/salom/AndroidStudioProjects/TBC_Midterm/app/src/main/res/layout/fragment_registration.xml" value="0.264" />
         <entry key="..\:/Users/salom/AndroidStudioProjects/TBC_Midterm/app/src/main/res/layout/fragment_settings.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/salom/AndroidStudioProjects/TBC_Midterm/app/src/main/res/layout/fragment_welcome.xml" value="0.264" />
       </map>

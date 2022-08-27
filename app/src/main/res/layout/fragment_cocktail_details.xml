@@ -9,21 +9,37 @@
     android:elevation="20dp"
     tools:context=".view.tabs.CocktailDetailsFragment">
 
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:id="@+id/progressBar"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnRetry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/retry"
+        android:layout_marginBottom="30dp"
+        android:textSize="20sp"
+        android:textColor="@color/main_color"
+        android:layout_gravity="bottom|center_horizontal"/>
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/btnBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:background="@null"
+        android:src="@drawable/ic_arrow_back"
+        android:layout_gravity="top|start"
+        tools:ignore="SpeakableTextPresentCheck" />
+
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/mainInfo"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#57ABA9A9">
-
-        <androidx.appcompat.widget.AppCompatImageButton
-            android:id="@+id/btnBack"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:background="@null"
-            android:src="@drawable/ic_arrow_back"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="SpeakableTextPresentCheck" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/imgCocktailImg"
@@ -121,19 +137,16 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txtAlcoholName" />
 
-        <ImageButton
-            android:id="@+id/favBtn"
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/btnFavorite"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="51dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="22dp"
+            android:layout_margin="20dp"
             android:minHeight="48dp"
-            android:src="@drawable/ic_favorite"
+            android:background="@null"
+            android:src="@drawable/ic_not_favorite"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/imgCocktailImg"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="SpeakableTextPresentCheck" />
+            app:layout_constraintTop_toTopOf="parent"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

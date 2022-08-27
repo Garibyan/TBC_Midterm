@@ -1,14 +1,14 @@
-package com.garibyan.armen.tbc_midterm
+package com.garibyan.armen.tbc_midterm.view
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log.d
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
-import androidx.lifecycle.lifecycleScope
-import com.garibyan.armen.tbc_midterm.network.ApiClient
+import com.garibyan.armen.tbc_midterm.R
 import com.garibyan.armen.tbc_midterm.view.auth.AuthenticationManager
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     private var backPressedTime: Long = 0
@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    private fun initFireBase(){
+    private fun initFireBase() {
         AuthenticationManager.initActivity(this)
     }
 
