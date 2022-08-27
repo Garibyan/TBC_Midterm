@@ -20,7 +20,7 @@ interface ApiService {
     suspend fun getTenRandomCocktails(): Drinks<Cocktail>
 
     @GET("lookup.php")
-    suspend fun getCocktailById(@Query("i") i: String): Cocktail
+    suspend fun getCocktailById(@Query("i") i: String): Drinks<Cocktail>
 
     @GET("filter.php")
     suspend fun getCocktailByCategory(@Query("c") c: String): Drinks<Cocktail>

@@ -11,11 +11,11 @@
         android:label="fragment_settings"
         tools:layout="@layout/fragment_settings" >
         <action
-            android:id="@+id/action_settingsFragment_to_passwordResetFragment"
-            app:destination="@id/passwordResetFragment" />
+            android:id="@+id/action_settingsFragment_to_passwordChangeFragment"
+            app:destination="@id/passwordChangeFragment" />
     </fragment>
     <fragment
-        android:id="@+id/passwordResetFragment"
-        android:name="com.garibyan.armen.tbc_midterm.view.tabs.PasswordResetFragment"
-        android:label="PasswordResetFragment" />
+        android:id="@+id/passwordChangeFragment"
+        android:name="com.garibyan.armen.tbc_midterm.view.tabs.PasswordChangeFragment"
+        android:label="PasswordChangeFragment" />
 </navigation>

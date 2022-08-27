@@ -15,6 +15,7 @@ import com.garibyan.armen.tbc_midterm.databinding.FragmentCocktailDetailsBinding
 import com.garibyan.armen.tbc_midterm.extentions.collectLatestFlow
 import com.garibyan.armen.tbc_midterm.network.Resource
 import com.garibyan.armen.tbc_midterm.network.responcemodels.Cocktail
+import com.garibyan.armen.tbc_midterm.utils.DetailsTabRequestType
 import com.garibyan.armen.tbc_midterm.view.BaseFragment
 import com.garibyan.armen.tbc_midterm.viewmodel.tabs.CocktailDetailsViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -31,10 +32,33 @@ class CocktailDetailsFragment : BaseFragment<FragmentCocktailDetailsBinding>(
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        viewModel.getCocktailById(args.cocktailId)
+        getRequestByType()
         observers()
         onClickListeners()
-        d("state", args.cocktailId)
+    }
+
+    private fun onClickListeners() = with(binding) {
+        btnBack.setOnClickListener {
+            findNavController().popBackStack()
+        }
+        btnFavorite.setOnClickListener {
+            isFavorite = !isFavorite
+            isFavorite()
+        }
+        btnRetry.setOnClickListener {
+            getRequestByType()
+        }
+    }
+
+    private fun getRequestByType(){
+        when(args.requestType){
+            DetailsTabRequestType.REQUEST_COCKTAIL_BY_ID -> {
+                viewModel.getCocktailById(args.cocktailId!!)
+            }
+            DetailsTabRequestType.REQUEST_RANDOM_COCKTAIL -> {
+                viewModel.getRandomCocktail()
+            }
+        }
     }
 
     private fun observers() {
@@ -43,7 +67,7 @@ class CocktailDetailsFragment : BaseFragment<FragmentCocktailDetailsBinding>(
                 is Resource.Success -> {
                     Log.d("state", "Success")
                     Log.d("state", it.value.toString())
-                    successfulState(it.value)
+                    successfulState(it.value.drinks[0])
                 }
                 is Resource.Error -> {
                     errorState(it.isNetworkError!!)
@@ -88,20 +112,6 @@ class CocktailDetailsFragment : BaseFragment<FragmentCocktailDetailsBinding>(
         binding.progressBar.visibility = View.VISIBLE
         btnRetry.visibility = View.GONE
         mainInfo.visibility = View.GONE
-    }
-
-
-    private fun onClickListeners() = with(binding) {
-        btnBack.setOnClickListener {
-            findNavController().popBackStack()
-        }
-        btnFavorite.setOnClickListener {
-            isFavorite = !isFavorite
-            isFavorite()
-        }
-        btnRetry.setOnClickListener {
-            viewModel.getCocktailById(args.cocktailId)
-        }
     }
 
     private fun isFavorite() {

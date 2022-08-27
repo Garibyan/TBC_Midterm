@@ -18,9 +18,10 @@
         <action
             android:id="@+id/action_loginFragment_to_registrationFragment"
             app:destination="@id/registrationFragment" />
-        <action
-            android:id="@+id/action_loginFragment_to_resetPasswordFragment"
-            app:destination="@id/resetPasswordFragment" />
+        <argument
+            android:name="email"
+            app:argType="string"
+            app:nullable="true" />
     </fragment>
     <fragment
         android:id="@+id/registrationFragment"
@@ -54,21 +55,5 @@
             app:destination="@id/tabsFragment"
             app:popUpTo="@id/main_graph"
             app:popUpToInclusive="true" />
-    </fragment>
-    <fragment
-        android:id="@+id/passwordChangeFragment"
-        android:name="com.garibyan.armen.tbc_midterm.view.tabs.PasswordChangeFragment"
-        android:label="PasswordChangeFragment" >
-        <action
-            android:id="@+id/action_passwordChangeFragment_to_tabsFragment"
-            app:destination="@id/tabsFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/resetPasswordFragment"
-        android:name="com.garibyan.armen.tbc_midterm.view.tabs.ResetPasswordFragment"
-        android:label="ResetPasswordFragment" >
-        <action
-            android:id="@+id/action_resetPasswordFragment_to_passwordChangeFragment"
-            app:destination="@id/passwordChangeFragment" />
     </fragment>
 </navigation>

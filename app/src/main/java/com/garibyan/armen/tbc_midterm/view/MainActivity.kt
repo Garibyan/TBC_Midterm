@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity() {
             super.onBackPressed()
             finish()
         } else {
-            Toast.makeText(this, "Press back again to leave the app.", Toast.LENGTH_LONG).show()
+            Toast.makeText(this, R.string.double_backpress, Toast.LENGTH_LONG).show()
         }
         backPressedTime = System.currentTimeMillis()
     }

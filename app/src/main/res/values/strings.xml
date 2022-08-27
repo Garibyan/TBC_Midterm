@@ -18,4 +18,5 @@
     <string name="category">Category:</string>
     <string name="glass">Glass:</string>
     <string name="retry">Retry</string>
+    <string name="double_backpress">Press back again to leave the app</string>
 </resources>

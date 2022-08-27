@@ -1,17 +1,14 @@
 package com.garibyan.armen.tbc_midterm.view.tabs
 
 import android.os.Bundle
-import android.util.Log.d
 import android.view.View
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.garibyan.armen.tbc_midterm.databinding.FragmentHomeBinding
+import com.garibyan.armen.tbc_midterm.utils.DetailsTabRequestType
 import com.garibyan.armen.tbc_midterm.utils.HomeTabRequestTypes
 import com.garibyan.armen.tbc_midterm.view.BaseFragment
 import com.garibyan.armen.tbc_midterm.viewmodel.tabs.HomeViewModel
-import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.launch
 
 
 class HomeFragment : BaseFragment<FragmentHomeBinding>(
@@ -37,6 +34,14 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(
         }
         txtSearchByCategory.setOnClickListener {
             findNavController().navigate(HomeFragmentDirections.actionHomeFragment2ToCategoriesFragment())
+        }
+        txtRandomCocktail.setOnClickListener {
+            findNavController().navigate(
+                HomeFragmentDirections.actionHomeFragment2ToCocktailDetailsFragment(
+                    null,
+                    DetailsTabRequestType.REQUEST_RANDOM_COCKTAIL
+                )
+            )
         }
     }
 

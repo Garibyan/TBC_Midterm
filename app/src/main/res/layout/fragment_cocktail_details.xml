@@ -134,8 +134,10 @@
             android:layout_margin="15dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtAlcoholName" />
+            app:layout_constraintTop_toBottomOf="@+id/txtAlcoholName"
+            app:layout_constraintVertical_bias="0.466" />
 
         <androidx.appcompat.widget.AppCompatImageButton
             android:id="@+id/btnFavorite"

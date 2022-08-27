@@ -25,9 +25,9 @@ class ResetPasswordFragment : BaseFragment<FragmentRecoveryPasswordBinding>(
             resetPassword()
         }
 
-        binding.recPassBtn.setOnClickListener{
-            findNavController().navigate(ResetPasswordFragmentDirections.actionResetPasswordFragmentToPasswordChangeFragment())
-        }
+//        binding.recPassBtn.setOnClickListener{
+//            findNavController().navigate(ResetPasswordFragmentDirections.actionResetPasswordFragmentToPasswordChangeFragment())
+//        }
     }
 
     private fun resetPassword(){

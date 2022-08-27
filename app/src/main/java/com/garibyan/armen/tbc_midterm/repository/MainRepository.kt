@@ -9,6 +9,7 @@ class MainRepository @Inject constructor(private val apiService: ApiService): Ba
 
     suspend fun getLatestCocktails() = apiCall { apiService.getLatestCocktails() }
 
+    suspend fun getRandomCocktails() = apiCall { apiService.getRandomCocktail() }
     suspend fun getRandomTenCocktails() = apiCall { apiService.getTenRandomCocktails() }
     suspend fun getAllCategories() = apiCall { apiService.getCategories() }
 

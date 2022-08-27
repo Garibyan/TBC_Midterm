@@ -6,6 +6,7 @@ import android.view.View
 import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import com.garibyan.armen.tbc_midterm.R
 import com.garibyan.armen.tbc_midterm.databinding.FragmentLoginBinding
 import com.garibyan.armen.tbc_midterm.view.BaseFragment
@@ -20,14 +21,21 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(
 ), View.OnClickListener {
 
     private val viewModel: LoginViewModel by viewModels()
+    private val args by navArgs<LoginFragmentArgs>()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         binding.logInBtn2.setOnClickListener(this)
 
-        //viewModel.saveEmail("binding.logInEmail.text.toString()")
+        setEmail()
         onClickListener()
+    }
+
+    private fun setEmail(){
+        if (args.email != null){
+            binding.logInEmail.setText(args.email)
+        }
     }
 
     override fun onClick(v: View?) {
@@ -40,10 +48,6 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(
 
         binding.loginSingUp.setOnClickListener {
             findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToRegistrationFragment())
-        }
-
-        binding.forgotPass.setOnClickListener {
-            findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToResetPasswordFragment())
         }
     }
 
@@ -62,16 +66,21 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(
 
     private fun checkLoginInfo() {
         if (checkLoginInputs()) {
-            val logInEmail = binding.logInEmail.text.toString()
-            val logInPassword = binding.logInPassword.text.toString()
-            
-            auth.signInWithEmailAndPassword(logInEmail, logInPassword).addOnCompleteListener{
-                viewModel.saveEmail(logInEmail)
-                findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToTabsFragment())
-            }.addOnCanceledListener{
-                Toast.makeText(requireContext(), "Something went wrong", Toast.LENGTH_SHORT).show()
+            val logInEmail = binding.logInEmail
+            val logInPassword = binding.logInPassword
+            viewModel.saveEmail(binding.logInEmail.text.toString())
+
+            login(logInEmail.text.toString(), logInPassword.text.toString()) { isSuccess ->
+                if (isSuccess) {
+                    findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToTabsFragment())
+                } else {
+                    Toast.makeText(
+                        requireContext(),
+                        "Couldn't login, try again later!",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }
             }
-            
         } else
             Toast.makeText(requireContext(), "Input correct login credentials!", Toast.LENGTH_SHORT)
                 .show()

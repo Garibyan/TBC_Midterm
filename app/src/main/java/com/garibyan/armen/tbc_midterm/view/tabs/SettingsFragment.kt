@@ -7,7 +7,10 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import androidx.navigation.fragment.findNavController
+import com.garibyan.armen.tbc_midterm.R
 import com.garibyan.armen.tbc_midterm.databinding.FragmentSettingsBinding
+import com.garibyan.armen.tbc_midterm.extentions.findTopNavController
 import com.garibyan.armen.tbc_midterm.view.BaseFragment
 import com.garibyan.armen.tbc_midterm.view.auth.AuthenticationManager
 import com.garibyan.armen.tbc_midterm.viewmodel.tabs.SettingsViewModel
@@ -44,10 +47,15 @@ class SettingsFragment : BaseFragment<FragmentSettingsBinding>(
         logOutBtn.setOnClickListener {
             logOut()
         }
+        passChange.setOnClickListener {
+            findNavController().navigate(SettingsFragmentDirections.actionSettingsFragmentToPasswordChangeFragment())
+        }
     }
 
     private fun logOut(){
+        AuthenticationManager.logOut()
         viewModel.clear()
+        findTopNavController().navigate(R.id.welcomeFragment)
     }
 
 }

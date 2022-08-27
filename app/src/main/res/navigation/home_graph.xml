@@ -27,7 +27,11 @@
         tools:layout="@layout/fragment_cocktail_details" >
         <argument
             android:name="cocktailId"
-            app:argType="string" />
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="requestType"
+            app:argType="integer" />
     </fragment>
     <fragment
         android:id="@+id/cocktailsListFragment"
