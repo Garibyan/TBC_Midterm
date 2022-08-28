@@ -1,7 +1,6 @@
 package com.garibyan.armen.tbc_midterm.di
 
 import com.garibyan.armen.tbc_midterm.network.ApiService
-import com.garibyan.armen.tbc_midterm.repository.MainRepository
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import dagger.Module
@@ -57,7 +56,4 @@ object NetworkModule {
     fun provideApiClient(retrofit: Retrofit): ApiService {
         return retrofit.create(ApiService::class.java)
     }
-
-//    @Provides
-//    fun provideAuthRepo(apiService: ApiService): MainRepository = MainRepository(apiService)
 }

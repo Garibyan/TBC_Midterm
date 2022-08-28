@@ -1,6 +1,5 @@
 package com.garibyan.armen.tbc_midterm.adapters
 
-import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
@@ -9,7 +8,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.garibyan.armen.tbc_midterm.databinding.CocktailIngredientItemBinding
 import com.garibyan.armen.tbc_midterm.network.responcemodels.Ingredient
 import com.garibyan.armen.tbc_midterm.utils.extentions.randomColor
-import kotlin.random.Random
 
 class IngredientAdapter :
     ListAdapter<Ingredient, IngredientAdapter.IngredientViewHolder>(IngredientCallBack()) {

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">TBC_Midterm</string>
+    <string name="app_name">Cocktail</string>
     <string name="login">Login</string>
     <string name="signup">SignUp</string>
     <string name="don_t_have_an_account_sign_up">Don\'t have an account? Sign Up</string>
@@ -31,4 +31,7 @@
     <string name="reset_message_is_sent_on_the_mail">Reset message is sent on the mail!</string>
     <string name="try_again_later">Try again later</string>
     <string name="alcohol" translatable="false">alcohol:</string>
+    <string name="home" translatable="false">Home</string>
+    <string name="craft" translatable="false">Craft</string>
+    <string name="settings" translatable="false">Settings</string>
 </resources>

@@ -5,37 +5,37 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_margin="10dp"
-    app:cardCornerRadius="20dp"
     android:elevation="25dp"
     app:cardBackgroundColor="@color/purple_color"
+    app:cardCornerRadius="20dp"
     tools:context=".view.tabs.CocktailDetailsFragment">
 
     <ProgressBar
+        android:id="@+id/progressBar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:visibility="gone"
-        android:id="@+id/progressBar"/>
+        android:visibility="gone" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnRetry"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/retry"
-        android:visibility="gone"
+        android:layout_gravity="bottom|center_horizontal"
         android:layout_marginBottom="30dp"
-        android:textSize="20sp"
+        android:text="@string/retry"
         android:textColor="@color/main_color"
-        android:layout_gravity="bottom|center_horizontal"/>
+        android:textSize="20sp"
+        android:visibility="gone" />
 
     <androidx.appcompat.widget.AppCompatImageButton
         android:id="@+id/btnBack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="top|start"
         android:layout_margin="20dp"
         android:background="@null"
         android:src="@drawable/ic_arrow_back"
-        android:layout_gravity="top|start"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -59,8 +59,8 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:textColor="@color/main_color"
             android:gravity="center"
+            android:textColor="@color/main_color"
             android:textSize="35sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -143,11 +143,11 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_margin="15dp"
-            android:textStyle="italic"
+            android:gravity="center"
+            android:scrollbars="vertical"
             android:textColor="@color/black"
             android:textSize="20sp"
-            android:scrollbars="vertical"
-            android:gravity="center"
+            android:textStyle="italic"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

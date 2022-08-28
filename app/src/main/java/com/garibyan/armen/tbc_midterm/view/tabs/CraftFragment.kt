@@ -1,7 +1,6 @@
 package com.garibyan.armen.tbc_midterm.view.tabs
 
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.SearchView
 import androidx.fragment.app.viewModels
@@ -29,12 +28,20 @@ class CraftFragment : BaseFragment<FragmentCraftBinding>(
         super.onViewCreated(view, savedInstanceState)
         viewModel.getIngredients()
         observer()
+        onClickListeners()
     }
-    private fun initRecyclerView(ingredientsList: List<Ingredient>) = with(binding.recyclerView){
+
+    private fun initRecyclerView(ingredientsList: List<Ingredient>) = with(binding.recyclerView) {
         layoutManager = LinearLayoutManager(requireContext())
         adapter = craftIngredientAdapter
         craftIngredientAdapter.submitList(ingredientsList)
 
+    }
+
+    private fun onClickListeners() = with(binding) {
+        btnRetry.setOnClickListener {
+            viewModel.getIngredients()
+        }
     }
 
     private fun search(ingredientsList: List<Ingredient>) {
@@ -45,7 +52,7 @@ class CraftFragment : BaseFragment<FragmentCraftBinding>(
 
                 if (!text.isNullOrEmpty()) {
                     list.addAll(craftIngredientAdapter.currentList.filter {
-                        it.item.toString().lowercase().contains(text.lowercase())
+                        it.item.lowercase().contains(text.lowercase())
                     })
                 } else {
                     list.addAll(ingredientsList)
@@ -62,18 +69,15 @@ class CraftFragment : BaseFragment<FragmentCraftBinding>(
         collectLatestFlow(viewModel.ingredientsFlow) {
             when (it) {
                 is Resource.Success -> {
-                    Log.d("state", "Success")
                     successfulState()
                     initRecyclerView(it.value.drinks)
                     search(it.value.drinks)
                 }
                 is Resource.Error -> {
                     errorState(it.isNetworkError!!)
-                    Log.d("state", "Error")
                 }
                 is Resource.Loading -> {
                     loadingState()
-                    Log.d("state", "Loading")
                 }
             }
         }
@@ -101,9 +105,5 @@ class CraftFragment : BaseFragment<FragmentCraftBinding>(
         btnRetry.visibility = View.GONE
         recyclerView.visibility = View.GONE
     }
-
-
-
-
 
 }

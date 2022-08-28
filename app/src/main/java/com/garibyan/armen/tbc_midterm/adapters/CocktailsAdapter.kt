@@ -17,15 +17,14 @@ class CocktailsAdapter :
 
     inner class CocktailViewHolder(private val binding: CocktailItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
-            fun bind(cocktail: Cocktail) = with(binding){
-                imgCocktailImg.load(cocktail.strDrinkThumb){
-                    transformations(CircleCropTransformation())
-                }
-                txtCocktailName.text = cocktail.name
-
-                root.setOnClickListener { onItemClickListener?.invoke(cocktail) }
+        fun bind(cocktail: Cocktail) = with(binding) {
+            imgCocktailImg.load(cocktail.strDrinkThumb) {
+                transformations(CircleCropTransformation())
             }
+            txtCocktailName.text = cocktail.name
 
+            root.setOnClickListener { onItemClickListener?.invoke(cocktail) }
+        }
     }
 
     class CocktailsCallBack : DiffUtil.ItemCallback<Cocktail>() {
@@ -33,7 +32,6 @@ class CocktailsAdapter :
             oldItem.idDrink == newItem.idDrink
 
         override fun areContentsTheSame(oldItem: Cocktail, newItem: Cocktail) = oldItem == newItem
-
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
@@ -48,5 +46,4 @@ class CocktailsAdapter :
     override fun onBindViewHolder(holder: CocktailViewHolder, position: Int) {
         holder.bind(getItem(position))
     }
-
 }

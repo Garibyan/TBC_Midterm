@@ -8,6 +8,7 @@ import retrofit2.http.GET
 import retrofit2.http.Query
 
 interface ApiService {
+
     @GET("popular.php")
     suspend fun getPopularCocktails(): Drinks<Cocktail>
 
@@ -29,18 +30,10 @@ interface ApiService {
     @GET("filter.php")
     suspend fun getCocktailByCategory(@Query("c") c: String): Drinks<Cocktail>
 
-
     @GET("list.php?c=list")
     suspend fun getCategories(): Drinks<Category>
 
     @GET("list.php?i=list")
     suspend fun getIngredients(): Drinks<Ingredient>
-//
-//    @GET("list.php?a=list")
-//    suspend fun getAlcoholicFilters(): Cocktails
-//
-//    @GET("list.php?g=list")
-//    suspend fun getGlasses(): Cocktails
-
 
 }

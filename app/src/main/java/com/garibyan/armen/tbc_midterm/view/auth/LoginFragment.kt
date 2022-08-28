@@ -78,7 +78,7 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(
                 }
             }
         } else
-                requireContext().toast(getString(R.string.input_correct_login_credentials))
+            requireContext().toast(getString(R.string.input_correct_login_credentials))
     }
 }
 

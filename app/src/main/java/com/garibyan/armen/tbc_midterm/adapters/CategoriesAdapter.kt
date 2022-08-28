@@ -7,7 +7,6 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.garibyan.armen.tbc_midterm.databinding.CaterotyItemBinding
 import com.garibyan.armen.tbc_midterm.network.responcemodels.Category
-import com.garibyan.armen.tbc_midterm.utils.extentions.randomColor
 
 class CategoriesAdapter :
     ListAdapter<Category, CategoriesAdapter.CategoryViewHolder>(CategoryCallBack()) {
@@ -16,7 +15,7 @@ class CategoriesAdapter :
 
     inner class CategoryViewHolder(private val binding: CaterotyItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bind(category: Category) = with(binding){
+        fun bind(category: Category) = with(binding) {
             txtCategory.text = category.item
             root.setOnClickListener { onItemClickListener?.invoke(category.item) }
         }

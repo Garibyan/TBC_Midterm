@@ -16,7 +16,6 @@ import javax.inject.Inject
 @HiltViewModel
 class CocktailDetailsViewModel @Inject constructor(private val repository: MainRepository) : ViewModel() {
 
-
     private val _cocktailFlow = MutableStateFlow<Resource<Drinks<Cocktail>>>(Resource.Loading)
     val cocktailFlow = _cocktailFlow.asStateFlow()
 
@@ -35,6 +34,4 @@ class CocktailDetailsViewModel @Inject constructor(private val repository: MainR
             }
         }
     }
-
-
 }

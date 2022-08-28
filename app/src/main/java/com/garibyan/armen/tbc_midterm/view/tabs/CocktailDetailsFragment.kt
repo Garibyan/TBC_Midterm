@@ -105,7 +105,7 @@ class CocktailDetailsFragment : BaseFragment<FragmentCocktailDetailsBinding>(
         }
     }
 
-    private fun getIngredientsList(cocktail: Cocktail): MutableList<Ingredient>? {
+    private fun getIngredientsList(cocktail: Cocktail): MutableList<Ingredient> {
         val listOfIngredients = mutableListOf<Ingredient>()
         cocktail.strIngredient1?.let { listOfIngredients.add(Ingredient(it)) }
         cocktail.strIngredient2?.let { listOfIngredients.add(Ingredient(it)) }
@@ -148,5 +148,4 @@ class CocktailDetailsFragment : BaseFragment<FragmentCocktailDetailsBinding>(
         btnRetry.visibility = View.GONE
         mainInfo.visibility = View.GONE
     }
-
 }

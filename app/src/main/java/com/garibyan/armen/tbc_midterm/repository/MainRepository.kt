@@ -4,7 +4,6 @@ import com.garibyan.armen.tbc_midterm.network.ApiService
 import dagger.hilt.android.scopes.ActivityRetainedScoped
 import javax.inject.Inject
 
-@ActivityRetainedScoped
 class MainRepository @Inject constructor(private val apiService: ApiService): BaseRepository() {
 
     suspend fun getPopularCocktails() = apiCall { apiService.getPopularCocktails() }

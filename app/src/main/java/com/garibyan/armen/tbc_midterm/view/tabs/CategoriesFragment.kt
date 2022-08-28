@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.garibyan.armen.tbc_midterm.R
@@ -17,6 +18,7 @@ import com.garibyan.armen.tbc_midterm.utils.HomeTabRequestTypes
 import com.garibyan.armen.tbc_midterm.view.BaseFragment
 import com.garibyan.armen.tbc_midterm.viewmodel.tabs.CategoriesViewModel
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class CategoriesFragment : BaseFragment<FragmentCategoriesBinding>(
@@ -28,9 +30,9 @@ class CategoriesFragment : BaseFragment<FragmentCategoriesBinding>(
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        viewModel.getCategories()
         observer()
         onClickListeners()
+        viewModel.getCategories()
     }
 
     private fun onClickListeners() = with(binding) {
@@ -59,17 +61,14 @@ class CategoriesFragment : BaseFragment<FragmentCategoriesBinding>(
         collectLatestFlow(viewModel.categoryFlow) {
             when (it) {
                 is Resource.Success -> {
-                    Log.d("state", "Success")
                     successfulState()
                     initRecyclerView(it.value.drinks)
                 }
                 is Resource.Error -> {
                     errorState(it.isNetworkError!!)
-                    Log.d("state", "Error")
                 }
                 is Resource.Loading -> {
                     loadingState()
-                    Log.d("state", "Loading")
                 }
             }
         }
@@ -97,6 +96,4 @@ class CategoriesFragment : BaseFragment<FragmentCategoriesBinding>(
         btnRetry.visibility = View.GONE
         rvCategories.visibility = View.GONE
     }
-
-
 }

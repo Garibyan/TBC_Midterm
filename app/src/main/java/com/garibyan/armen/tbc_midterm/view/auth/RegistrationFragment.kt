@@ -24,7 +24,9 @@ class RegistrationFragment : BaseFragment<FragmentRegistrationBinding>(
         binding.registerBtn2.setOnClickListener(this)
 
         binding.signUpLogIn.setOnClickListener {
-            findNavController().navigate(RegistrationFragmentDirections.actionRegistrationFragmentToLoginFragment(null))
+            findNavController().navigate(
+                RegistrationFragmentDirections.actionRegistrationFragmentToLoginFragment(null)
+            )
         }
     }
 
@@ -55,14 +57,14 @@ class RegistrationFragment : BaseFragment<FragmentRegistrationBinding>(
             val user = User(registerEmail)
             register(user, registerPassword) { isSuccess ->
                 if (isSuccess) {
-                    findNavController().navigate(RegistrationFragmentDirections.actionRegistrationFragmentToLoginFragment(registerEmail))
-                } else {
-                    requireContext().toast(getString(R.string.couldnot_create_account_try_again_later))
-                }
+                    findNavController().navigate(
+                        RegistrationFragmentDirections.actionRegistrationFragmentToLoginFragment(
+                            registerEmail
+                        )
+                    )
+                } else requireContext().toast(getString(R.string.couldnot_create_account_try_again_later))
             }
-        } else
-        requireContext().toast(getString(R.string.your_input_is_not_correct))
-
+        } else requireContext().toast(getString(R.string.your_input_is_not_correct))
     }
 
 }

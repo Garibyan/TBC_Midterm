@@ -26,6 +26,5 @@ class CraftViewModel @Inject constructor(private val repository: MainRepository)
                 _ingredientsFlow.value = it
             }
         }
-
     }
 }

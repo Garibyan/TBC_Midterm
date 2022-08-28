@@ -31,6 +31,7 @@ class CocktailsListFragment : BaseFragment<FragmentCocktailsListBinding>(
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        observer()
         checkRequestType(args.requestType)
         onClickListeners()
     }
@@ -85,25 +86,24 @@ class CocktailsListFragment : BaseFragment<FragmentCocktailsListBinding>(
         when (requestType) {
             HomeTabRequestTypes.REQUEST_POPULAR_COCKTAILS -> {
                 viewModel.getPopularCocktails()
-                collectLatestFlow(viewModel.popularCocktails) { checkState(it) }
             }
             HomeTabRequestTypes.REQUEST_LATEST_COCKTAILS -> {
                 viewModel.getLatestCocktails()
-                collectLatestFlow(viewModel.popularCocktails) { checkState(it) }
             }
             HomeTabRequestTypes.REQUEST_RANDOM_TEN_COCKTAILS -> {
                 viewModel.getRandomTenCocktails()
-                collectLatestFlow(viewModel.popularCocktails) { checkState(it) }
             }
             HomeTabRequestTypes.REQUEST_SEARCH_BY_CATEGORY -> {
                 viewModel.getCocktailsByCategory(args.category!!)
-                collectLatestFlow(viewModel.popularCocktails) { checkState(it) }
             }
             HomeTabRequestTypes.REQUEST_SEARCH_BY_INGREDIENT -> {
                 viewModel.getCocktailsByIngredient(args.category!!)
-                collectLatestFlow(viewModel.popularCocktails) { checkState(it) }
             }
         }
+    }
+
+    private fun observer(){
+        collectLatestFlow(viewModel.popularCocktails) { checkState(it) }
     }
 
     private fun checkState(resource: Resource<Drinks<Cocktail>>) {

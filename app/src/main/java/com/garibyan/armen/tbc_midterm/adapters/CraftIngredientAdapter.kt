@@ -5,14 +5,13 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.garibyan.armen.tbc_midterm.databinding.CocktailIngredientItemBinding
 import com.garibyan.armen.tbc_midterm.databinding.CraftItemBinding
 import com.garibyan.armen.tbc_midterm.network.responcemodels.Ingredient
-import com.garibyan.armen.tbc_midterm.utils.extentions.randomColor
 
-class CraftIngredientAdapter: ListAdapter<Ingredient, CraftIngredientAdapter.CraftIngredientViewHolder>(CraftIngredientCallBack()) {
-
-    var onItemClickListener: ((ingredient: String) -> Unit)? = null
+class CraftIngredientAdapter :
+    ListAdapter<Ingredient, CraftIngredientAdapter.CraftIngredientViewHolder>(
+        CraftIngredientCallBack()
+    ) {
 
     inner class CraftIngredientViewHolder(private val binding: CraftItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
@@ -28,11 +27,15 @@ class CraftIngredientAdapter: ListAdapter<Ingredient, CraftIngredientAdapter.Cra
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
-        CraftIngredientViewHolder(CraftItemBinding.inflate(LayoutInflater.from(parent.context),parent,false))
+        CraftIngredientViewHolder(
+            CraftItemBinding.inflate(
+                LayoutInflater.from(parent.context),
+                parent,
+                false
+            )
+        )
 
     override fun onBindViewHolder(holder: CraftIngredientViewHolder, position: Int) {
         holder.bind(getItem(position))
     }
-
-
 }

@@ -12,7 +12,6 @@
         android:orientation="horizontal">
 
 
-
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -48,8 +47,8 @@
         android:layout_height="55dp"
         android:layout_gravity="center"
         android:layout_marginTop="10dp"
-        android:text="@string/signup"
         android:background="@drawable/button2"
+        android:text="@string/signup"
         android:textColor="#E91E63" />
 
 </LinearLayout>
