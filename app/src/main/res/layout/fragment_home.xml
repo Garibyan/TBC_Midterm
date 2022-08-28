@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FDE5EC"
     android:padding="15dp"
     tools:context=".view.tabs.HomeFragment">
 
@@ -11,28 +12,31 @@
         android:id="@+id/txtRandomCocktail"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:background="@drawable/button"
-        android:text="Random Cocktail"
         android:gravity="center"
-        android:textColor="@color/black"
         android:padding="20dp"
+        android:text="Random Cocktail"
+        android:textColor="@color/white"
         android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.137"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/txtRandomTenCocktail"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="@drawable/button"
-        android:text="Random 10 Cocktails"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/button2"
         android:gravity="center"
-        android:textColor="@color/black"
         android:padding="20dp"
+        android:text="Random 10 Cocktails"
+        android:textColor="#E91E63"
         android:textSize="25sp"
-        android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.517"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/txtRandomCocktail" />
 
@@ -40,14 +44,15 @@
         android:id="@+id/txtPopularCocktails"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
         android:background="@drawable/button"
-        android:text="Popular Cocktails"
         android:gravity="center"
-        android:textColor="@color/black"
         android:padding="20dp"
+        android:text="Popular Cocktails"
+        android:textColor="@color/white"
         android:textSize="25sp"
-        android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.551"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/txtRandomTenCocktail" />
 
@@ -55,14 +60,15 @@
         android:id="@+id/txtLatestCocktails"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="@drawable/button"
-        android:text="Latest Cocktails"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/button2"
         android:gravity="center"
-        android:textColor="@color/black"
         android:padding="20dp"
+        android:text="Latest Cocktails"
+        android:textColor="#E91E63"
         android:textSize="25sp"
-        android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.551"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/txtPopularCocktails" />
 
@@ -70,16 +76,29 @@
         android:id="@+id/txtSearchByCategory"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
         android:background="@drawable/button"
-        android:text="Search by category"
         android:gravity="center"
-        android:textColor="@color/black"
         android:padding="20dp"
+        android:text="Search by category"
+        android:textColor="@color/white"
         android:textSize="25sp"
-        android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.551"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/txtLatestCocktails" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="231dp"
+        android:layout_height="169dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="32dp"
+        android:src="@drawable/maincocktail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
