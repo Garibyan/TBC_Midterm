@@ -58,6 +58,6 @@ object NetworkModule {
         return retrofit.create(ApiService::class.java)
     }
 
-    @Provides
-    fun provideAuthRepo(apiService: ApiService): MainRepository = MainRepository(apiService)
+//    @Provides
+//    fun provideAuthRepo(apiService: ApiService): MainRepository = MainRepository(apiService)
 }

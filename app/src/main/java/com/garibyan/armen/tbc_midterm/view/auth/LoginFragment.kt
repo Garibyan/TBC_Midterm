@@ -1,18 +1,15 @@
 package com.garibyan.armen.tbc_midterm.view.auth
 
-import android.content.Context
 import android.os.Bundle
 import android.util.Patterns
 import android.view.View
-import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.garibyan.armen.tbc_midterm.R
 import com.garibyan.armen.tbc_midterm.databinding.FragmentLoginBinding
-import com.garibyan.armen.tbc_midterm.extentions.toast
+import com.garibyan.armen.tbc_midterm.utils.extentions.toast
 import com.garibyan.armen.tbc_midterm.view.BaseFragment
-import com.garibyan.armen.tbc_midterm.view.auth.AuthenticationManager.auth
 import com.garibyan.armen.tbc_midterm.view.auth.AuthenticationManager.login
 import com.garibyan.armen.tbc_midterm.viewmodel.auth.LoginViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -70,7 +67,6 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(
         if (checkLoginInputs()) {
             val logInEmail = binding.logInEmail
             val logInPassword = binding.logInPassword
-            viewModel.saveEmail(binding.logInEmail.text.toString())
 
             login(logInEmail.text.toString(), logInPassword.text.toString()) { isSuccess ->
                 if (isSuccess) {

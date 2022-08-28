@@ -1,9 +1,7 @@
-package com.garibyan.armen.tbc_midterm.extentions
+package com.garibyan.armen.tbc_midterm.utils.extentions
 
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
-import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
@@ -14,9 +12,7 @@ import kotlinx.coroutines.launch
 
 fun <T> Fragment.collectLatestFlow(flow: Flow<T>, collect: suspend (T) -> Unit) {
     viewLifecycleOwner.lifecycleScope.launch {
-        repeatOnLifecycle(Lifecycle.State.STARTED) {
             flow.collectLatest(collect)
-        }
     }
 }
 

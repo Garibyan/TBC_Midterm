@@ -9,6 +9,7 @@ import com.garibyan.armen.tbc_midterm.repository.MainRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.asSharedFlow
+import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -18,9 +19,10 @@ class CategoriesViewModel @Inject constructor(private val repository: MainReposi
     private val _categoryFlow = MutableSharedFlow<Resource<Drinks<Category>>>()
     val categoryFlow = _categoryFlow.asSharedFlow()
 
+
     fun getCategories(){
         viewModelScope.launch {
-            repository.getAllCategories().collect{
+            repository.getAllCategories().collectLatest{
                 _categoryFlow.emit(it)
             }
         }

@@ -8,15 +8,6 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
-@HiltViewModel
-class SettingsViewModel @Inject constructor(private val dataStore: DataStore) : ViewModel() {
-
-    fun getSavedEmail() = dataStore.getPreferences(DataStoreKeys.EMAIL_KEY)
-
-    fun clear(){
-        viewModelScope.launch {
-            dataStore.clear()
-        }
-    }
+class SettingsViewModel : ViewModel() {
 
 }

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FDE5EC"
+    android:background="@color/purple_color"
     android:padding="15dp"
     tools:context=".view.tabs.HomeFragment">
 

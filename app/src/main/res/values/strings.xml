@@ -30,4 +30,5 @@
     <string name="input_is_incorrect">Input is incorrect</string>
     <string name="reset_message_is_sent_on_the_mail">Reset message is sent on the mail!</string>
     <string name="try_again_later">Try again later</string>
+    <string name="alcohol" translatable="false">alcohol:</string>
 </resources>

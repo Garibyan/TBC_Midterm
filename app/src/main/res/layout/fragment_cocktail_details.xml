@@ -6,13 +6,15 @@
     android:layout_height="match_parent"
     android:layout_margin="10dp"
     app:cardCornerRadius="20dp"
-    android:elevation="20dp"
+    android:elevation="25dp"
+    app:cardBackgroundColor="@color/purple_color"
     tools:context=".view.tabs.CocktailDetailsFragment">
 
     <ProgressBar
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:visibility="gone"
         android:id="@+id/progressBar"/>
 
     <androidx.appcompat.widget.AppCompatButton
@@ -20,6 +22,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/retry"
+        android:visibility="gone"
         android:layout_marginBottom="30dp"
         android:textSize="20sp"
         android:textColor="@color/main_color"
@@ -38,12 +41,11 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/mainInfo"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#57ABA9A9">
+        android:layout_height="match_parent">
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/imgCocktailImg"
-            android:layout_width="150dp"
+            android:layout_width="130dp"
             android:layout_height="0dp"
             android:layout_marginTop="20dp"
             android:src="@drawable/ic_launcher_background"
@@ -56,8 +58,8 @@
             android:id="@+id/txtTitle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:textColor="@color/black"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/main_color"
             android:gravity="center"
             android:textSize="35sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -114,7 +116,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="15dp"
-            android:text="@string/glass"
+            android:text="@string/alcohol"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txtGlass" />
 
@@ -127,28 +129,29 @@
             app:layout_constraintStart_toEndOf="@+id/txtCategory"
             app:layout_constraintTop_toBottomOf="@+id/txtGlass" />
 
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvIngredients"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtAlcoholName" />
+
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/txtInstruction"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_margin="15dp"
+            android:textStyle="italic"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:scrollbars="vertical"
+            android:gravity="center"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtAlcoholName"
-            app:layout_constraintVertical_bias="0.466" />
-
-        <androidx.appcompat.widget.AppCompatImageButton
-            android:id="@+id/btnFavorite"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="20dp"
-            android:minHeight="48dp"
-            android:background="@null"
-            android:src="@drawable/ic_not_favorite"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintTop_toBottomOf="@+id/rvIngredients" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

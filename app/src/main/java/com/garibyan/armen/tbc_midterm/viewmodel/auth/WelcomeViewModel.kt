@@ -6,9 +6,7 @@ import com.garibyan.armen.tbc_midterm.utils.DataStoreKeys
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
-@HiltViewModel
-class WelcomeViewModel @Inject constructor(private val dataStore: DataStore) : ViewModel() {
+class WelcomeViewModel: ViewModel() {
 
-    fun checkUserSession() = dataStore.getPreferences(DataStoreKeys.EMAIL_KEY)
 
 }

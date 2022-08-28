@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
+import androidx.navigation.fragment.NavHostFragment
 import com.garibyan.armen.tbc_midterm.R
 import com.garibyan.armen.tbc_midterm.view.auth.AuthenticationManager
 import dagger.hilt.android.AndroidEntryPoint
@@ -15,15 +16,23 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        installSplashScreen().apply {
-            // TODO: Check if logged in
-        }
+        installSplashScreen()
         setContentView(R.layout.activity_main)
-
+        checkSession()
     }
 
-    private fun initFireBase() {
-        AuthenticationManager.initActivity(this)
+    private fun checkSession(){
+        navigation(AuthenticationManager.isLoggedIn())
+    }
+
+    private fun navigation(isLoggedIn: Boolean) {
+        val navHostFragment =
+            supportFragmentManager.findFragmentById(R.id.fragmentContainer) as NavHostFragment
+        val navController = navHostFragment.navController
+        when (isLoggedIn) {
+            true -> navController.navigate(R.id.tabsFragment)
+            false -> navController.navigate(R.id.welcomeFragment)
+        }
     }
 
     override fun onBackPressed() {

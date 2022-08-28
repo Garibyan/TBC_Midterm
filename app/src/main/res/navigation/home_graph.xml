@@ -32,6 +32,9 @@
         <argument
             android:name="requestType"
             app:argType="integer" />
+        <action
+            android:id="@+id/action_cocktailDetailsFragment_to_cocktailsListFragment"
+            app:destination="@id/cocktailsListFragment" />
     </fragment>
     <fragment
         android:id="@+id/cocktailsListFragment"

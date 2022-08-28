@@ -3,15 +3,14 @@ package com.garibyan.armen.tbc_midterm.view.tabs
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.garibyan.armen.tbc_midterm.R
 import com.garibyan.armen.tbc_midterm.adapters.CategoriesAdapter
 import com.garibyan.armen.tbc_midterm.databinding.FragmentCategoriesBinding
-import com.garibyan.armen.tbc_midterm.extentions.collectLatestFlow
-import com.garibyan.armen.tbc_midterm.extentions.toast
+import com.garibyan.armen.tbc_midterm.utils.extentions.collectLatestFlow
+import com.garibyan.armen.tbc_midterm.utils.extentions.toast
 import com.garibyan.armen.tbc_midterm.network.Resource
 import com.garibyan.armen.tbc_midterm.network.responcemodels.Category
 import com.garibyan.armen.tbc_midterm.utils.HomeTabRequestTypes

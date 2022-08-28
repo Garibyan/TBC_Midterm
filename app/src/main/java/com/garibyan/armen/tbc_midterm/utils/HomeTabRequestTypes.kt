@@ -6,4 +6,5 @@ object HomeTabRequestTypes {
     const val REQUEST_LATEST_COCKTAILS = 3
     const val REQUEST_POPULAR_COCKTAILS = 4
     const val REQUEST_SEARCH_BY_CATEGORY = 5
+    const val REQUEST_SEARCH_BY_INGREDIENT = 6
 }

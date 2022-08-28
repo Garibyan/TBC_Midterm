@@ -1,6 +1,8 @@
 package com.garibyan.armen.tbc_midterm.view.auth
 
 import android.app.Activity
+import com.garibyan.armen.tbc_midterm.auth.User
+import com.garibyan.armen.tbc_midterm.auth.UserInstance
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.ktx.database
@@ -9,21 +11,15 @@ import java.lang.ref.WeakReference
 
 object AuthenticationManager: FirebaseAuthentication{
 
-    private var activity: WeakReference<Activity>? = null
-
     var auth: FirebaseAuth = FirebaseAuth.getInstance()
 
     private var database: DatabaseReference = Firebase.database.reference
-
-    fun initActivity(activity: Activity){
-        this.activity = WeakReference(activity)
-    }
 
     override fun logOut() {
         auth.signOut()
     }
 
-    override fun saveUser(user:User,resultLambda: (Boolean) -> Unit) {
+    override fun saveUser(user: User, resultLambda: (Boolean) -> Unit) {
         database.child("users").child(auth.currentUser!!.uid).setValue(user)
         database.child("users").child(auth.currentUser!!.uid).get().addOnSuccessListener {
             UserInstance.userData = user
@@ -64,7 +60,7 @@ object AuthenticationManager: FirebaseAuthentication{
         }
     }
 
-    override fun register(user: User,password: String,resultLambda: (Boolean) -> Unit) {
+    override fun register(user: User, password: String, resultLambda: (Boolean) -> Unit) {
         auth.createUserWithEmailAndPassword(user.email, password).addOnCompleteListener { task ->
             if(task.isSuccessful){
                 saveUser(user,resultLambda)
@@ -83,7 +79,7 @@ interface FirebaseAuthentication{
 
     fun getUser(resultLambda: (Boolean) -> Unit)
 
-    fun saveUser(user:User,resultLambda: (Boolean) -> Unit)
+    fun saveUser(user: User, resultLambda: (Boolean) -> Unit)
 
     fun passwordReset(email: String,resultLambda: (Boolean) -> Unit)
 
@@ -91,6 +87,6 @@ interface FirebaseAuthentication{
 
     fun login(email: String, password:String,resultLambda: (Boolean) -> Unit)
 
-    fun register(user: User,password: String,resultLambda: (Boolean) -> Unit)
+    fun register(user: User, password: String, resultLambda: (Boolean) -> Unit)
 
 }

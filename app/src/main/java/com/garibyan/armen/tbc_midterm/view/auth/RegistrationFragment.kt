@@ -3,11 +3,11 @@ package com.garibyan.armen.tbc_midterm.view.auth
 import android.os.Bundle
 import android.util.Patterns
 import android.view.View
-import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.garibyan.armen.tbc_midterm.R
+import com.garibyan.armen.tbc_midterm.auth.User
 import com.garibyan.armen.tbc_midterm.databinding.FragmentRegistrationBinding
-import com.garibyan.armen.tbc_midterm.extentions.toast
+import com.garibyan.armen.tbc_midterm.utils.extentions.toast
 import com.garibyan.armen.tbc_midterm.view.BaseFragment
 import com.garibyan.armen.tbc_midterm.view.auth.AuthenticationManager.register
 

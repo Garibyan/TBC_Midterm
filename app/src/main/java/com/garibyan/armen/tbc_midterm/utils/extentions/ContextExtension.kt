@@ -1,4 +1,4 @@
-package com.garibyan.armen.tbc_midterm.extentions
+package com.garibyan.armen.tbc_midterm.utils.extentions
 
 import android.content.Context
 import android.widget.Toast
