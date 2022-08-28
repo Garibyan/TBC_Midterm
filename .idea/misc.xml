@@ -29,7 +29,14 @@
         <entry key="..\:/Users/salom/AndroidStudioProjects/TBC_Midterm/app/src/main/res/drawable/button2.xml" value="0.1195" />
         <entry key="..\:/Users/salom/AndroidStudioProjects/TBC_Midterm/app/src/main/res/drawable/rectangular_edittext.xml" value="0.133" />
         <entry key="..\:/Users/salom/AndroidStudioProjects/TBC_Midterm/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/salom/AndroidStudioProjects/TBC_Midterm/app/src/main/res/layout/cateroty_item.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/salom/AndroidStudioProjects/TBC_Midterm/app/src/main/res/layout/cocktail_ingredient_item.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/salom/AndroidStudioProjects/TBC_Midterm/app/src/main/res/layout/cocktail_item.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/salom/AndroidStudioProjects/TBC_Midterm/app/src/main/res/layout/craft_item.xml" value="0.183206106870229" />
+        <entry key="..\:/Users/salom/AndroidStudioProjects/TBC_Midterm/app/src/main/res/layout/fragment_categories.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/salom/AndroidStudioProjects/TBC_Midterm/app/src/main/res/layout/fragment_cocktail_details.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/salom/AndroidStudioProjects/TBC_Midterm/app/src/main/res/layout/fragment_craft.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/salom/AndroidStudioProjects/TBC_Midterm/app/src/main/res/layout/fragment_favorite.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/salom/AndroidStudioProjects/TBC_Midterm/app/src/main/res/layout/fragment_home.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/salom/AndroidStudioProjects/TBC_Midterm/app/src/main/res/layout/fragment_login.xml" value="0.25" />
         <entry key="..\:/Users/salom/AndroidStudioProjects/TBC_Midterm/app/src/main/res/layout/fragment_password_reset.xml" value="0.2" />
@@ -38,6 +45,7 @@
         <entry key="..\:/Users/salom/AndroidStudioProjects/TBC_Midterm/app/src/main/res/layout/fragment_registration.xml" value="0.264" />
         <entry key="..\:/Users/salom/AndroidStudioProjects/TBC_Midterm/app/src/main/res/layout/fragment_settings.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/salom/AndroidStudioProjects/TBC_Midterm/app/src/main/res/layout/fragment_welcome.xml" value="0.264" />
+        <entry key="..\:/Users/salom/AndroidStudioProjects/TBC_Midterm/app/src/main/res/menu/bottom_navigation.xml" value="0.25416666666666665" />
       </map>
     </option>
   </component>

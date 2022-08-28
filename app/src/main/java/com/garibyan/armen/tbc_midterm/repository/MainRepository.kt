@@ -15,5 +15,6 @@ class MainRepository @Inject constructor(private val apiService: ApiService): Ba
     suspend fun getCocktailsByCategory(category: String) = apiCall { apiService.getCocktailByCategory(category) }
     suspend fun getCocktailById(id: String) = apiCall { apiService.getCocktailById(id)}
     suspend fun getCocktailsByIngredient(ingredient: String) = apiCall { apiService.getCocktailsByIngredient(ingredient)}
+    suspend fun getAllIngredients() = apiCall { apiService.getIngredients() }
 
 }

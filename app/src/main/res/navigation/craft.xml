@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/Craft"
+    app:startDestination="@id/craftFragment">
+    <fragment
+        android:id="@+id/craftFragment"
+        android:name="com.garibyan.armen.tbc_midterm.view.tabs.CraftFragment"
+        android:label="fragment_craft"
+        tools:layout="@layout/fragment_craft" />
+</navigation>

@@ -3,6 +3,7 @@ package com.garibyan.armen.tbc_midterm.network
 import com.garibyan.armen.tbc_midterm.network.responcemodels.Category
 import com.garibyan.armen.tbc_midterm.network.responcemodels.Cocktail
 import com.garibyan.armen.tbc_midterm.network.responcemodels.Drinks
+import com.garibyan.armen.tbc_midterm.network.responcemodels.Ingredient
 import retrofit2.http.GET
 import retrofit2.http.Query
 
@@ -32,8 +33,8 @@ interface ApiService {
     @GET("list.php?c=list")
     suspend fun getCategories(): Drinks<Category>
 
-//    @GET("list.php?i=list")
-//    suspend fun getIngredients(): Cocktails
+    @GET("list.php?i=list")
+    suspend fun getIngredients(): Drinks<Ingredient>
 //
 //    @GET("list.php?a=list")
 //    suspend fun getAlcoholicFilters(): Cocktails

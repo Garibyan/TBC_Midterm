@@ -61,21 +61,21 @@ class CocktailsListFragment : BaseFragment<FragmentCocktailsListBinding>(
     }
 
     private fun search(cocktailsList: List<Cocktail>) {
-        binding.searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener,
-            androidx.appcompat.widget.SearchView.OnQueryTextListener {
-            override fun onQueryTextChange(text: String?): Boolean {
-                val list = mutableListOf<Cocktail>()
+                binding.searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener,
+                    androidx.appcompat.widget.SearchView.OnQueryTextListener {
+                    override fun onQueryTextChange(text: String?): Boolean {
+                        val list = mutableListOf<Cocktail>()
 
-                if (!text.isNullOrEmpty()) {
-                    list.addAll(cocktailsAdapter.currentList.filter {
-                        it.name.toString().lowercase().contains(text.lowercase())
-                    })
-                } else {
-                    list.addAll(cocktailsList)
-                }
-                cocktailsAdapter.submitList(list)
-                return true
-            }
+                        if (!text.isNullOrEmpty()) {
+                            list.addAll(cocktailsAdapter.currentList.filter {
+                                it.name.toString().lowercase().contains(text.lowercase())
+                            })
+                        } else {
+                            list.addAll(cocktailsList)
+                        }
+                        cocktailsAdapter.submitList(list)
+                        return true
+                    }
 
             override fun onQueryTextSubmit(p0: String?): Boolean = true
         })
